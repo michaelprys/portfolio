@@ -1,5 +1,5 @@
-import '@styles/main.css';
-import '@styles/font-face.css';
+import '@style/main.css';
+import '@style/font-face.css';
 
 import { createApp } from 'vue';
 import App from './App.vue';

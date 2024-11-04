@@ -1,9 +1,9 @@
 <script setup>
-import SectionIntro from '@/components/SectionIntro.vue'
+import SectionIntro from './components/SectionIntro.vue';
 </script>
 
 <template>
-    <SectionIntro />
+    <div class="container mx-auto pb-16 pt-12">
+        <SectionIntro />
+    </div>
 </template>
-
-<style scoped></style>

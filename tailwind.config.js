@@ -4,13 +4,22 @@ export default {
     theme: {
         extend: {
             colors: {
-                'bg-custom-bright': '#FFF197',
-                'bg-custom-gray': '#1A1919',
-                'bg-custom-dark': '#030303',
-                'bg-custom-darker': '#050000',
-                'text-custom-bright': '#FAFAFA',
-                'text-custom-dark': '#AAA7A7',
+                'custom-gray': '#1A1919',
+                // 'custom-bright-1': '#358b60', // green
+                'custom-bright-1': '#FFF197',
+                'custom-bright-2': '#FAFAFA',
+                'custom-medium': '#575757',
+                'custom-dark-1': '#030303',
+                'custom-dark-2': '#050000',
             },
+            borderRadius: {
+                '4xl': '2rem',
+                btn: '4rem',
+            },
+        },
+        fontFamily: {
+            primary: ['Gotham'],
+            secondary: ['Retro Signature'],
         },
     },
     plugins: [],
