@@ -13,7 +13,7 @@ export default defineConfig({
                 new URL('./src/assets/images', import.meta.url)
             ),
             '@icon': fileURLToPath(
-                new URL('./src/assets/images/icons', import.meta.url)
+                new URL('./src/components/icons', import.meta.url)
             ),
             '@style': fileURLToPath(
                 new URL('./src/assets/styles', import.meta.url)

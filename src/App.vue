@@ -1,9 +1,11 @@
 <script setup>
 import SectionIntro from './components/SectionIntro.vue';
+import SectionProjects from './components/SectionProjects.vue';
 </script>
 
 <template>
-    <div class="container mx-auto pb-16 pt-12">
+    <div class="pb-16 pt-12">
         <SectionIntro />
+        <SectionProjects />
     </div>
 </template>

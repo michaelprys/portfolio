@@ -1,11 +1,24 @@
 <script setup>
-import ItemTooltip from './items/ItemTooltip.vue';
+import IconFigma from '@/components/icons/IconFigma.vue';
+import IconGit from '@/components/icons/IconGit.vue';
+import IconGithub from '@/components/icons/IconGithub.vue';
+import IconLinkedin from '@/components/icons/IconLinkedin.vue';
+import IconNuxt from '@/components/icons/IconNuxt.vue';
+import IconPostgres from '@/components/icons/IconPostgres.vue';
+import IconSass from '@/components/icons/IconSass.vue';
+import IconShadcn from '@/components/icons/IconShadcn.vue';
+import IconStackoverflow from '@/components/icons/IconStackoverflow.vue';
+import IconTailwind from '@/components/icons/IconTailwind.vue';
+import IconTypeScript from '@/components/icons/IconTypeScript.vue';
+import IconValibot from '@/components/icons/IconValibot.vue';
+import IconVue from '@/components/icons/IconVue.vue';
+import ItemTooltip from '@/components/items/ItemTooltip.vue';
 </script>
 
 <template>
     <section
         id="intro"
-        class="grid max-h-[48.125rem] grid-cols-[17.5rem_35rem_17.5rem] grid-rows-2 items-stretch justify-center gap-6">
+        class="container mx-auto grid max-h-[48.125rem] grid-cols-[17.5rem_35rem_17.5rem] grid-rows-2 items-stretch justify-center gap-6">
         <h2 class="sr-only">Introduction</h2>
         <section
             class="row-span-2 flex flex-col items-center rounded-4xl bg-custom-gray p-6">
@@ -29,7 +42,7 @@ import ItemTooltip from './items/ItemTooltip.vue';
 
             <a
                 class="mt-6 w-full rounded-btn bg-custom-dark-1 px-14 py-4 text-center transition-colors duration-[400ms] hover:bg-custom-bright-1 hover:text-custom-dark-1"
-                href="/"
+                href="https://drive.google.com/file/d/16mgzRTz0sDuHWYDTSFkqHaStwk-9X3mc/view?usp=sharing"
                 target="_blank">
                 View CV
             </a>
@@ -42,36 +55,28 @@ import ItemTooltip from './items/ItemTooltip.vue';
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
                         class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                        aria-hidden="true"
                         >Nuxt.js
                     </ItemTooltip>
                     <a
                         href="https://nuxt.com"
                         target="_blank"
-                        aria-label="Visit Nuxt.js website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/nuxt.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Nuxt meta-framework" />
+                        aria-label="Nuxt.js meta-framework">
+                        <IconNuxt />
                     </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
-                        class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                        class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                        aria-hidden="true">
                         Vue.js
                     </ItemTooltip>
                     <a
                         href="https://vuejs.org"
                         target="_blank"
-                        aria-label="Visit Vuejs website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/vue.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Vue framework"
-                    /></a>
+                        aria-label="Vuejs framework">
+                        <IconVue />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -81,32 +86,23 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://www.typescriptlang.org"
                         target="_blank"
-                        aria-label="Visit Typescript website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/ts.svg"
-                            width="28px"
-                            height="28px"
-                            alt="Typescript"
-                    /></a>
+                        aria-label="Typescript language">
+                        <IconTypeScript />
+                    </a>
                 </li>
-                <li
-                    class="group transition-transform hover:scale-125"
-                    aria-label="Visit Shadcn website for more information">
+                <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
                         class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
                         Shadcn
                     </ItemTooltip>
-                    <a href="https://ui.shadcn.com" target="_blank">
-                        <img
-                            class="object-cover"
-                            src="@icon/shadcn.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Shadcn UI"
-                    /></a>
+                    <a
+                        href="https://ui.shadcn.com"
+                        target="_blank"
+                        aria-label="Shadcn component library">
+                        <IconShadcn />
+                    </a>
                 </li>
-                <li class="group flex transition-transform hover:scale-125">
+                <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
                         class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
                         Valibot
@@ -114,14 +110,9 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://valibot.dev"
                         target="_blank"
-                        aria-label="Visit Valibot website for more information">
-                        <img
-                            class="object-fit w-full"
-                            src="@icon/valibot.svg"
-                            width="28px"
-                            height="28px"
-                            alt="Valibot schema library"
-                    /></a>
+                        aria-label="Valibot schema library">
+                        <IconValibot />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -131,14 +122,9 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://www.postgresql.org"
                         target="_blank"
-                        aria-label="Visit Postgresql website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/pg.svg"
-                            width="24px"
-                            height="24px"
-                            alt="PostgreSQL database"
-                    /></a>
+                        aria-label="PostgreSQL database">
+                        <IconPostgres />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -148,14 +134,9 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://git-scm.com"
                         target="_blank"
-                        aria-label="Visit Git website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/git.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Git version control"
-                    /></a>
+                        aria-label="Git version control">
+                        <IconGit />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -165,14 +146,9 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://sass-lang.com"
                         target="_blank"
-                        aria-label="Visit Sass website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/sass.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Sass preprocessor"
-                    /></a>
+                        aria-label="Sass preprocessor">
+                        <IconSass />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -182,14 +158,9 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://tailwindcss.com"
                         target="_blank"
-                        aria-label="Visit Tailwind website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/tailwind.svg"
-                            width="24px"
-                            height="24px"
-                            alt="TailwindCSS framework"
-                    /></a>
+                        aria-label="TailwindCSS framework">
+                        <IconTailwind />
+                    </a>
                 </li>
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
@@ -199,19 +170,17 @@ import ItemTooltip from './items/ItemTooltip.vue';
                     <a
                         href="https://www.figma.com"
                         target="_blank"
-                        aria-label="Visit Figma website for more information">
-                        <img
-                            class="object-cover"
-                            src="@icon/figma.svg"
-                            width="24px"
-                            height="24px"
-                            alt="Figma design tool" />
+                        aria-label="Figma design tool">
+                        <IconFigma />
                     </a>
                 </li>
             </ul>
             <p class="text-sm">
                 Visit the
-                <a class="underline underline-offset-4" href="#latest-projects"
+                <a
+                    class="underline underline-offset-4"
+                    href="#projects"
+                    aria-label="View latest projects"
                     >#projects</a
                 >
                 section to see the works created with these technologies.
@@ -236,12 +205,14 @@ import ItemTooltip from './items/ItemTooltip.vue';
                 <div class="flex gap-2">
                     <a
                         class="hover:bg-custom-bright-1-dimmed rounded-btn bg-custom-bright-1 px-10 py-3 text-center leading-none text-custom-dark-1 transition-colors duration-[400ms] hover:bg-opacity-90"
-                        href="#latest-projects">
+                        href="#projects"
+                        aria-label="Go to latest projects section">
                         Projects
                     </a>
                     <a
                         class="rounded-btn bg-custom-dark-1 px-10 py-3 text-center leading-none transition-colors duration-[400ms] hover:bg-custom-bright-1 hover:text-custom-dark-1"
-                        href="#services">
+                        href="#services"
+                        aria-label="Go to services section">
                         Services
                     </a>
                 </div>
@@ -261,40 +232,36 @@ import ItemTooltip from './items/ItemTooltip.vue';
             </p>
             <ul class="mt-8 flex items-center justify-center gap-6">
                 <li class="transition-transform hover:scale-125">
-                    <a href="https://www.linkedin.com/" target="_blank">
-                        <img
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        aria-label="Linkedin profile">
+                        <IconLinkedin
                             class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2"
-                            src="@icon/linkedin.svg"
-                            width="32px"
-                            height="32px"
-                            alt="Linkedin profile" />
+                            aria-label="Linkedin profile" />
                     </a>
                 </li>
                 <li class="transition-transform hover:scale-125">
-                    <a href="https://github.com/michaelprys" target="_blank">
-                        <img
-                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2"
-                            src="@icon/github.svg"
-                            width="32px"
-                            height="32px"
-                            alt="Github profile" />
+                    <a
+                        href="https://github.com/michaelprys"
+                        target="_blank"
+                        aria-label="Github profile">
+                        <IconGithub
+                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2" />
                     </a>
                 </li>
                 <li class="transition-transform hover:scale-125">
                     <a
                         href="https://stackoverflow.com/users/20343913"
-                        target="_blank">
-                        <img
-                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2"
-                            src="@icon/stackoverflow.svg"
-                            width="32px"
-                            height="32px"
-                            alt="Stackoverflow profile" />
+                        target="_blank"
+                        aria-label="Stackoverflow profile">
+                        <IconStackoverflow
+                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2" />
                     </a>
                 </li>
             </ul>
             <div
-                class="mt-2 h-[13.125rem] w-[14.5rem] bg-[length:50rem] bg-center bg-no-repeat mix-blend-color-dodge grayscale"
+                class="mt-2 h-[13.125rem] w-[14.5rem] bg-[length:50rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[0.5px] brightness-[90%] grayscale"
                 style="
                     background-image: url('/src/assets/images/intro/visual.gif');
                 " />
@@ -306,7 +273,8 @@ import ItemTooltip from './items/ItemTooltip.vue';
             </p>
             <a
                 class="mt-8 block w-full rounded-btn bg-custom-bright-1 px-14 py-4 text-center text-custom-dark-1 transition-colors duration-[400ms] hover:bg-opacity-90"
-                href="#contact">
+                href="#contact"
+                aria-label="Go to the contact form">
                 Contact Me
             </a>
         </section>
