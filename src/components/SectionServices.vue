@@ -6,19 +6,19 @@ import IconRocket from '@/components/icons/IconRocket.vue';
 </script>
 
 <template>
-    <section id="services" class="container mx-auto mt-28">
-        <h1 class="text-4xl text-center uppercase font-light">Services</h1>
+    <section id="services" class="container mx-auto pb-16 pt-12">
+        <h1 class="text-center text-4xl font-light uppercase">Services</h1>
         <ul
-            class="mt-16 *:bg-custom-gray-1 *:rounded-4xl *:max-w-[23rem] *:p-6 grid grid-cols-4 gap-8 *:transition-transform *:duration-300 *:cursor-pointer *:will-change-contents">
+            class="mt-16 grid grid-cols-4 gap-8 *:max-w-[23rem] *:cursor-pointer *:rounded-4xl *:bg-custom-gray-1 *:p-6 *:transition-transform *:duration-300 *:will-change-contents">
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 w-16 h-16 bg-custom-decoration rounded-full" />
+                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration" />
                     <IconCode
-                        class="absolute *:fill-[#ffffff] -bottom-4 left-0" />
+                        class="absolute -bottom-4 left-0 *:fill-[#ffffff]" />
                 </div>
 
-                <h2 class="mt-8 font-bold text-xl">
+                <h2 class="mt-8 text-xl font-bold">
                     Responsive & Accessible UI
                 </h2>
                 <p class="mt-5 text-custom-gray-3">
@@ -29,12 +29,12 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 w-16 h-16 bg-custom-decoration rounded-full" />
+                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration" />
                     <IconRocket
-                        class="absolute *:fill-custom-white -bottom-4 left-0" />
+                        class="absolute -bottom-4 left-0 *:fill-custom-white" />
                 </div>
 
-                <h2 class="mt-8 font-bold text-xl">
+                <h2 class="mt-8 text-xl font-bold">
                     Performance & Optimization
                 </h2>
                 <p class="mt-5 text-custom-gray-3">
@@ -45,12 +45,12 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 w-16 h-16 bg-custom-decoration rounded-full" />
+                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration" />
                     <IconGear
-                        class="absolute *:fill-custom-white -bottom-4 left-0" />
+                        class="absolute -bottom-4 left-0 *:fill-custom-white" />
                 </div>
 
-                <h2 class="mt-8 font-bold text-xl">
+                <h2 class="mt-8 text-xl font-bold">
                     API Integration & State Management
                 </h2>
                 <p class="mt-5 text-custom-gray-3">
@@ -61,12 +61,12 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 w-16 h-16 bg-custom-decoration rounded-full" />
+                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration" />
                     <IconLock
-                        class="absolute *:fill-custom-white -bottom-4 left-0" />
+                        class="absolute -bottom-4 left-0 *:fill-custom-white" />
                 </div>
 
-                <h2 class="mt-8 font-bold text-xl">
+                <h2 class="mt-8 text-xl font-bold">
                     Authentication & Validation
                 </h2>
                 <p class="mt-5 text-custom-gray-3">

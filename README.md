@@ -1,5 +1,7 @@
 # Portfolio
 
+This is my personal portfolio built with Vue 3, showcasing my projects, skills, and background. Its purpose is to give visitors an easy way to learn more about me and the work I do.
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

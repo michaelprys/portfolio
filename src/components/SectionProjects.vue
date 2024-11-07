@@ -13,7 +13,7 @@ const project1 = usePlayVideo();
 </script>
 
 <template>
-    <section id="projects" class="container mx-auto mt-28">
+    <section id="projects" class="container mx-auto pb-16 pt-12">
         <h2 class="text-center text-4xl font-light uppercase">
             Latest projects
         </h2>
@@ -31,7 +31,7 @@ const project1 = usePlayVideo();
                                 srcset="@img/projects/lows-n-lines.avif"
                                 type="image/avif" />
                             <img
-                                class="h-[13.125rem] w-full opacity-100 rounded-3xl object-cover transition-opacity duration-300"
+                                class="h-[13.125rem] w-full rounded-3xl object-cover opacity-100 transition-opacity duration-300"
                                 :class="{
                                     'opacity-0': !project1.state.value,
                                 }"
