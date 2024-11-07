@@ -21,10 +21,10 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
         class="container mx-auto grid max-h-[48.125rem] grid-cols-[17.5rem_35rem_17.5rem] grid-rows-2 items-stretch justify-center gap-6">
         <h2 class="sr-only">Introduction</h2>
         <section
-            class="row-span-2 flex flex-col items-center rounded-4xl bg-custom-gray p-6">
+            class="row-span-2 flex flex-col items-center rounded-4xl bg-custom-gray-1 p-6">
             <h2 class="sr-only">About me</h2>
             <div class="flex items-center gap-3">
-                <span class="h-8 w-8 rounded-full bg-custom-bright-1"></span>
+                <span class="h-8 w-8 rounded-full bg-custom-citrus"></span>
                 <h2
                     class="flex items-center gap-3 font-secondary text-[1.75rem]">
                     Mykhailo Prysiazhnyi
@@ -36,12 +36,12 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                 Specialized in Nuxt.js, Vue.js, TypeScript, HTML and CSS.
             </p>
             <p class="mt-4">
-                I create solutions that make life easier for users and help
-                streamline tasks for the team.
+                I focus on creating user-friendly solutions that simplify
+                everyday tasks and improve efficiency.
             </p>
 
             <a
-                class="mt-6 w-full rounded-btn bg-custom-dark-1 px-14 py-4 text-center transition-colors duration-[400ms] hover:bg-custom-bright-1 hover:text-custom-dark-1"
+                class="mt-6 w-full rounded-btn bg-custom-dark-1 px-14 py-4 text-center transition-colors duration-400 hover:bg-custom-citrus hover:text-custom-dark-1"
                 href="https://drive.google.com/file/d/16mgzRTz0sDuHWYDTSFkqHaStwk-9X3mc/view?usp=sharing"
                 target="_blank">
                 View CV
@@ -49,9 +49,10 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
         </section>
 
         <section
-            class="col-start-1 row-start-3 grid gap-6 rounded-[2rem] bg-custom-gray p-6">
+            class="col-start-1 row-start-3 grid gap-6 rounded-[2rem] bg-custom-gray-1 p-6">
             <h2 class="text-[1.25rem] font-bold">Tech | Tools</h2>
-            <ul class="grid grid-cols-5 grid-rows-2 items-center gap-4">
+            <ul
+                class="grid grid-cols-5 grid-rows-2 items-center gap-4 *:will-change-contents">
                 <li class="group transition-transform hover:scale-125">
                     <ItemTooltip
                         class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
@@ -197,20 +198,20 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
             <div
                 class="absolute bottom-8 left-8 flex flex-col gap-5 rounded-4xl border-2 border-white border-opacity-50 bg-[#030303] bg-opacity-10 p-9 backdrop-blur-[8px]"
                 style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
-                <h1 class="text-[2rem] font-light text-custom-gray">
+                <h1 class="text-[2rem] font-light text-custom-gray-1">
                     Mykhailo <br />
                     Prysiazhnyi
                 </h1>
 
                 <div class="flex gap-2">
                     <a
-                        class="hover:bg-custom-bright-1-dimmed rounded-btn bg-custom-bright-1 px-10 py-3 text-center leading-none text-custom-dark-1 transition-colors duration-[400ms] hover:bg-opacity-90"
+                        class="hover:bg-custom-citrus-dimmed rounded-btn bg-custom-citrus px-10 py-3 text-center leading-none text-custom-dark-1 transition-colors duration-400 hover:bg-opacity-90"
                         href="#projects"
                         aria-label="Go to latest projects section">
                         Projects
                     </a>
                     <a
-                        class="rounded-btn bg-custom-dark-1 px-10 py-3 text-center leading-none transition-colors duration-[400ms] hover:bg-custom-bright-1 hover:text-custom-dark-1"
+                        class="rounded-btn bg-custom-dark-1 px-10 py-3 text-center leading-none transition-colors duration-400 hover:bg-custom-citrus hover:text-custom-dark-1"
                         href="#services"
                         aria-label="Go to services section">
                         Services
@@ -220,15 +221,15 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
         </figure>
 
         <section
-            class="col-start-3 row-span-3 row-start-1 grid content-center rounded-4xl bg-custom-gray p-6">
+            class="col-start-3 row-span-3 row-start-1 grid content-center rounded-4xl bg-custom-gray-1 p-6">
             <h2 class="sr-only">Info</h2>
             <span>
                 Mykhailo Prysiazhnyi -
                 <span class="font-bold">Web Developer</span>
             </span>
             <p class="mt-4">
-                Based in Prague, I bring several years of experience, having
-                developed various full-stack applications.
+                Based in Prague, I have developed several full-stack
+                applications, honing my skills through practical experience.
             </p>
             <ul class="mt-8 flex items-center justify-center gap-6">
                 <li class="transition-transform hover:scale-125">
@@ -237,7 +238,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                         target="_blank"
                         aria-label="Linkedin profile">
                         <IconLinkedin
-                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2"
+                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-white object-cover p-2"
                             aria-label="Linkedin profile" />
                     </a>
                 </li>
@@ -247,7 +248,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                         target="_blank"
                         aria-label="Github profile">
                         <IconGithub
-                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2" />
+                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-white object-cover p-2" />
                     </a>
                 </li>
                 <li class="transition-transform hover:scale-125">
@@ -256,23 +257,19 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                         target="_blank"
                         aria-label="Stackoverflow profile">
                         <IconStackoverflow
-                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-bright-2 object-cover p-2" />
+                            class="h-[2.5625rem] w-[2.5625rem] rounded-full bg-custom-white object-cover p-2" />
                     </a>
                 </li>
             </ul>
             <div
-                class="mt-2 h-[13.125rem] w-[14.5rem] bg-[length:50rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[0.5px] brightness-[90%] grayscale"
-                style="
-                    background-image: url('/src/assets/images/intro/visual.gif');
-                " />
-
+                class="mt-2 h-[13.125rem] w-[14.5rem] bg-[length:50rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[0.5px] brightness-[90%] supports-[background-image:url('@img/intro/texture.avif')]:bg-[url('@img/intro/texture.avif')] bg-[url('@img/intro/texture.webp')]" />
             <p class="mt-4 text-sm">
                 Feel free to contact me using the form below or email me at
                 <span class="font-bold">prysiazhnyi.dev@gmail.com</span>, and I
                 will respond promptly.
             </p>
             <a
-                class="mt-8 block w-full rounded-btn bg-custom-bright-1 px-14 py-4 text-center text-custom-dark-1 transition-colors duration-[400ms] hover:bg-opacity-90"
+                class="mt-8 block w-full rounded-btn bg-custom-citrus px-14 py-4 text-center text-custom-dark-1 transition-colors duration-400 hover:bg-opacity-90"
                 href="#contact"
                 aria-label="Go to the contact form">
                 Contact Me

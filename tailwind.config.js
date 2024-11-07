@@ -12,18 +12,24 @@ export default {
                 },
             },
             colors: {
-                'custom-gray': '#1A1919',
-                // 'custom-bright-1': '#358b60', // green
-                'custom-bright-1': '#FFF197',
-                'custom-bright-2': '#FAFAFA',
-                'custom-medium-1': '#575757',
-                'custom-medium-2': '#AAA7A7',
+                'custom-gray-1': '#1A1919',
+                // 'custom-green': '#yellow', // green
+                // 'custom-green': '#358b60', // green
+                // 'custom-green': '#725e4f', // brown
+                'custom-citrus': '#FFF197',
+                'custom-white': '#FAFAFA',
+                'custom-decoration': '#725e4f',
+                'custom-gray-2': '#575757',
+                'custom-gray-3': '#AAA7A7',
                 'custom-dark-1': '#030303',
                 'custom-dark-2': '#050000',
             },
             borderRadius: {
                 '4xl': '2rem',
                 btn: '4rem',
+            },
+            transitionDuration: {
+                400: '400ms',
             },
         },
         fontFamily: {
