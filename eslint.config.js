@@ -1,17 +1,29 @@
-import js from '@eslint/js'
-import pluginVue from 'eslint-plugin-vue'
-
+import pluginVue from 'eslint-plugin-vue';
+import stylistic from '@stylistic/eslint-plugin';
 export default [
     {
-        name: 'app/files-to-lint',
-        files: ['**/*.{js,mjs,jsx,vue}'],
+        'plugins': {
+            '@stylistic': stylistic,
+            'vue': pluginVue
+        },
+        'rules': {
+            // Stylistic
+            '@stylistic/comma-dangle': ['error', 'never'],
+            '@stylistic/indent': ['error', 4],
+            '@stylistic/quotes': ['error', 'single'],
+            '@stylistic/semi': 'error',
+            '@stylistic/no-multiple-empty-lines': ['error', { 'max': 1, 'maxBOF': 0, 'maxEOF': 1 }],
+            // Vue
+            'vue/html-indent': ['error', 4]
+        },
+        'files': ['**/*.{js,mjs,jsx,vue}']
     },
-
     {
-        name: 'app/files-to-ignore',
-        ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+        'ignores': [
+            '**/dist/**',
+            '**/dist-ssr/**',
+            '**/coverage/**'
+        ]
     },
-
-    js.configs.recommended,
-    ...pluginVue.configs['flat/essential'],
-]
+    ...pluginVue.configs['flat/essential']
+];

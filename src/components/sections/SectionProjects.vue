@@ -7,7 +7,7 @@ import IconTailwind from '@/components/icons/IconTailwind.vue';
 import IconValibot from '@/components/icons/IconValibot.vue';
 import ItemTooltip from '@/components/items/ItemTooltip.vue';
 
-import { usePlayVideo } from '@/use/usePlayVideo';
+import {usePlayVideo} from '@/use/usePlayVideo';
 
 const project1 = usePlayVideo();
 </script>
@@ -18,18 +18,22 @@ const project1 = usePlayVideo();
             Latest projects
         </h2>
         <ul
-            class="mt-16 grid grid-cols-[368px_368px_368px] justify-between gap-8">
+            class="mt-16 grid grid-cols-[368px_368px_368px] justify-between gap-8 *:shadow-xl"
+        >
             <li>
                 <figure
-                    class="rounded-4xl bg-custom-gray-1 p-6 shadow-xl"
+                    class="rounded-4xl bg-custom-gray-1 p-6"
                     @mouseover="project1.playVideo"
-                    @mouseleave="project1.stopVideo">
+                    @mouseleave="project1.stopVideo"
+                >
                     <div
-                        class="relative cursor-pointer shadow-sm transition-shadow hover:shadow-lg">
+                        class="relative cursor-pointer"
+                    >
                         <picture>
                             <source
                                 srcset="@img/projects/lows-n-lines.avif"
-                                type="image/avif" />
+                                type="image/avif"
+                            >
                             <img
                                 class="h-[13.125rem] w-full rounded-3xl object-cover opacity-100 transition-opacity duration-300"
                                 :class="{
@@ -39,89 +43,103 @@ const project1 = usePlayVideo();
                                 width="683px"
                                 height="384px"
                                 loading="lazy"
-                                alt="Lows-n-Lines project" />
+                                alt="Lows-n-Lines project"
+                            >
                         </picture>
                         <video
+                            :ref="project1.videoRef"
                             class="absolute top-0 h-[13.125rem] w-full rounded-3xl object-cover opacity-0 transition-opacity duration-300"
                             width="320px"
                             height="210px"
                             muted
                             loop
-                            :ref="project1.videoRef"
                             :class="{
                                 'opacity-100': project1.state.value,
-                            }">
+                            }"
+                        >
                             <source
                                 src="@/assets/videos/lows-n-lines-preview.mp4"
-                                type="video/mp4" />
+                                type="video/mp4"
+                            >
                         </video>
                     </div>
                     <figcaption class="mt-4 text-xl font-bold">
                         Lows-n-Lines
                     </figcaption>
-                    <p class="mt-2 text-custom-gray-3">
+                    <p class="mt-2 text-custom-subtext">
                         A lowrider selling platform, featuring a system for
                         inquiries between buyers and sellers.
                     </p>
                     <ul
-                        class="mt-6 inline-flex items-center gap-4 rounded-4xl bg-custom-dark-1 px-4 py-2 *:will-change-contents">
+                        class="mt-6 inline-flex items-center gap-4 rounded-4xl bg-custom-dark-2 px-4 py-2 *:will-change-contents"
+                    >
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 Nuxt.js
                             </ItemTooltip>
                             <a
                                 href="https://nuxt.com"
                                 target="_blank"
-                                aria-label="Nuxt.js">
+                                aria-label="Nuxt.js"
+                            >
                                 <IconNuxt />
                             </a>
                         </li>
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 Shadcn
                             </ItemTooltip>
                             <a
                                 href="https://ui.shadcn.com"
                                 target="_blank"
-                                aria-label="Shadcn component library">
+                                aria-label="Shadcn component library"
+                            >
                                 <IconShadcn />
                             </a>
                         </li>
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 TailwindCSS
                             </ItemTooltip>
                             <a
                                 href="https://tailwindcss.com"
                                 target="_blank"
-                                aria-label="TailwindCSS framework">
+                                aria-label="TailwindCSS framework"
+                            >
                                 <IconTailwind />
                             </a>
                         </li>
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 Valibot
                             </ItemTooltip>
                             <a
                                 href="https://valibot.dev"
                                 target="_blank"
-                                aria-label="Valibot schema library">
+                                aria-label="Valibot schema library"
+                            >
                                 <IconValibot />
                             </a>
                         </li>
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500">
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 PostgreSQL
                             </ItemTooltip>
                             <a
                                 href="https://www.postgresql.org"
                                 target="_blank"
-                                aria-label="PostgreSQL database">
+                                aria-label="PostgreSQL database"
+                            >
                                 <IconPostgres />
                             </a>
                         </li>
@@ -130,11 +148,13 @@ const project1 = usePlayVideo();
                         <a
                             class="inline-flex items-center gap-2.5 font-medium"
                             href="https://lows-n-lines.netlify.app/"
-                            target="_blank">
+                            target="_blank"
+                        >
                             <IconLink aria-label="View Lows-n-Lines project" />
                             <div class="relative">
                                 <span
-                                    class="after:absolute after:-bottom-[2px] after:left-0 after:h-[1px] after:w-0 after:bg-custom-white after:transition-all after:duration-400 after:group-hover:w-[6.3rem]">
+                                    class="after:absolute after:-bottom-[2px] after:left-0 after:h-[1px] after:w-0 after:bg-custom-white after:transition-all after:duration-400 after:group-hover:w-[6.3rem]"
+                                >
                                     View Project
                                 </span>
                             </div>

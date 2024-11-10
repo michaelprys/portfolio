@@ -1,23 +1,28 @@
 import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-    plugins: [vue()],
-    resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url)),
-            '@img': fileURLToPath(
-                new URL('./src/assets/images', import.meta.url)
-            ),
-            '@icon': fileURLToPath(
-                new URL('./src/components/icons', import.meta.url)
-            ),
-            '@style': fileURLToPath(
-                new URL('./src/assets/styles', import.meta.url)
-            ),
-        },
-    },
+    'plugins': [vue()],
+    'resolve': {
+        'alias': {
+            '@': fileURLToPath(new URL(
+                './src',
+                import.meta.url
+            )),
+            '@img': fileURLToPath(new URL(
+                './src/assets/images',
+                import.meta.url
+            )),
+            '@icon': fileURLToPath(new URL(
+                './src/components/icons',
+                import.meta.url
+            )),
+            '@style': fileURLToPath(new URL(
+                './src/assets/styles',
+                import.meta.url
+            ))
+        }
+    }
 });
