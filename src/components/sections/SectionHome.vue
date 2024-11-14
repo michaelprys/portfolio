@@ -21,34 +21,36 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
             Introduction
         </h2>
         <div
-            class="grid max-h-[48.125rem] grid-cols-[17.5rem_35rem_17.5rem] grid-rows-2 items-stretch justify-center gap-6"
+            class="grid max-h-[770px] grid-cols-[280px_560px_280px] grid-rows-2 items-stretch justify-center gap-6"
         >
             <section
-                class="row-span-2 flex flex-col items-center rounded-4xl bg-custom-gray-1 p-6"
+                class="row-span-2 flex flex-col items-center rounded-common bg-primary-common px-6 py-8"
             >
                 <h2 class="sr-only">
                     About me
                 </h2>
                 <div class="flex items-center gap-3">
-                    <span class="h-8 w-8 rounded-full bg-custom-citrus" />
-                    <h2
-                        class="flex items-center gap-3 font-secondary text-[1.75rem] text-custom-white"
-                    >
-                        Mykhailo Prysiazhnyi
-                    </h2>
+                    <span class="h-8 w-8 rounded-full bg-primary-accent" />
+                    <div class="relative -mt-2 h-[2.4375rem] w-[9rem] overflow-hidden">
+                        <video class="absolute top-[-1.125rem] object-contain mix-blend-screen contrast-150" disablePictureInPicture="true" disableRemotePlayback="true" controlslist="nodownload nofullscreen noremoteplayback" width="144" height="79" autoplay muted aria-hidden="true">
+                            <source src="@/assets/videos/handwriting.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-                <p class="mt-6">
-                    Committed to developing high-performing, scalable web
-                    applications using modern technologies and best practices.
-                    Specialized in Nuxt.js, Vue.js, TypeScript, HTML and CSS.
-                </p>
-                <p class="mt-4">
-                    I focus on creating user-friendly solutions that simplify
-                    everyday tasks and improve efficiency.
-                </p>
 
+                <div class="-mt-2">
+                    <p class="mt-6">
+                        Committed to developing high-performing, scalable web
+                        applications using modern technologies and best practices.
+                        Specialized in Nuxt.js, Vue.js, TypeScript, HTML and CSS.
+                    </p>
+                    <p class="mt-3.5">
+                        I focus on creating intuitive solutions that simplify
+                        everyday tasks and improve efficiency.
+                    </p>
+                </div>
                 <a
-                    class="mt-6 w-full rounded-btn bg-custom-dark-1 px-14 py-4 text-center text-custom-dark-2 transition-colors duration-400 hover:bg-custom-citrus hover:text-custom-white"
+                    class="mt-6 w-full rounded-max bg-secondary-accent px-14 py-4 text-center text-secondary-common transition-colors duration-400 hover:bg-primary-accent hover:text-primary-text"
                     href="https://drive.google.com/file/d/140geB4spehZNzfvO0B1oJLuqDlsUd4m3/view?usp=sharing"
                     target="_blank"
                 >
@@ -57,10 +59,10 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
             </section>
 
             <section
-                class="col-start-1 row-start-3 grid gap-6 rounded-4xl bg-custom-gray-1 p-6"
+                class="col-start-1 row-start-3 grid gap-6 rounded-common bg-primary-common px-6 py-8"
             >
-                <h2 class="text-[1.25rem] font-bold">
-                    Tech | Tools
+                <h2 class="text-[20px] font-bold">
+                    Tech & Tools
                 </h2>
                 <ul
                     class="grid grid-cols-5 grid-rows-2 items-center gap-4 *:will-change-contents"
@@ -90,7 +92,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                         <a
                             href="https://vuejs.org"
                             target="_blank"
-                            aria-label="Vuejs framework"
+                            aria-label="Vue.js framework"
                         >
                             <IconVue />
                         </a>
@@ -211,7 +213,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                 <p class="text-sm">
                     Visit the
                     <a
-                        class="underline underline-offset-4"
+                        class="hover:text-primary-text/75 transition-colors duration-400 underline underline-offset-4"
                         href="#projects"
                         aria-label="View latest projects"
                     >#projects</a>
@@ -221,33 +223,33 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
 
             <figure class="relative col-start-2 row-span-3 row-start-1">
                 <img
-                    class="h-full w-full rounded-4xl object-cover"
+                    class="h-full w-full rounded-common object-cover"
                     src="@img/home/profile.webp"
-                    width="1297px"
-                    height="1796px"
+                    width="81.0625rem"
+                    height="112.25rem"
                     alt="Profile photo"
                 >
                 <div
-                    class="absolute bottom-8 left-8 flex flex-col gap-5 rounded-4xl border-2 border-white border-opacity-50 bg-[#030303] bg-opacity-10 p-9 backdrop-blur-[8px]"
+                    class="absolute bottom-8 left-8 flex flex-col gap-5 rounded-common border-2 border-white border-opacity-50 bg-[#030303] bg-opacity-10 p-9 backdrop-blur-[.5rem]"
                     style="
                         box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08);
                     "
                 >
-                    <h1 class="text-[2rem] font-light text-custom-gray-1">
+                    <h1 class="text-[32px] font-light text-primary-common">
                         Mykhailo <br>
                         Prysiazhnyi
                     </h1>
 
                     <div class="flex gap-2">
                         <a
-                            class="hover:bg-custom-citrus-dimmed rounded-btn bg-custom-citrus px-10 py-3 text-center leading-none text-custom-white transition-colors duration-400 hover:bg-opacity-90"
+                            class="hover:bg-primary-accent/90 rounded-max bg-primary-accent px-10 py-3 text-center leading-none text-primary-text transition-colors duration-400"
                             href="#projects"
                             aria-label="Go to latest projects section"
                         >
                             Projects
                         </a>
                         <a
-                            class="rounded-btn bg-custom-dark-1 px-10 py-3 text-center leading-none text-custom-dark-2 transition-colors duration-400 hover:bg-custom-citrus hover:text-custom-white"
+                            class="rounded-max bg-secondary-accent px-10 py-3 text-center leading-none text-primary-common transition-colors duration-400 hover:bg-primary-accent hover:text-primary-text"
                             href="#services"
                             aria-label="Go to services section"
                         >
@@ -258,7 +260,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
             </figure>
 
             <section
-                class="col-start-3 row-span-3 row-start-1 grid content-center rounded-4xl bg-custom-gray-1 p-6"
+                class="col-start-3 row-span-3 row-start-1 grid content-center rounded-common bg-primary-common px-6 py-8"
             >
                 <h2 class="sr-only">
                     Info
@@ -279,7 +281,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                             aria-label="Linkedin profile"
                         >
                             <IconLinkedin
-                                class="h-10 w-10 rounded-full bg-custom-white object-cover p-2"
+                                class="h-10 w-10 rounded-max bg-primary-text object-cover p-2"
                                 aria-label="Linkedin profile"
                             />
                         </a>
@@ -291,7 +293,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                             aria-label="Github profile"
                         >
                             <IconGithub
-                                class="h-10 w-10 rounded-full bg-custom-white object-cover p-2"
+                                class="h-10 w-10 rounded-max bg-primary-text object-cover p-2"
                             />
                         </a>
                     </li>
@@ -302,13 +304,13 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                             aria-label="Stackoverflow profile"
                         >
                             <IconStackoverflow
-                                class="h-10 w-10 rounded-full bg-custom-white object-cover p-2"
+                                class="h-10 w-10 rounded-max bg-primary-text object-cover p-2"
                             />
                         </a>
                     </li>
                 </ul>
                 <div
-                    class="mt-2 h-[13.125rem] w-[14.5rem] bg-[url('@img/home/texture.webp')] bg-[length:50rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[0.5px] brightness-[90%] supports-[background-image:url('@img/home/texture.avif')]:bg-[url('@img/home/texture.avif')]"
+                    class="mt-2 h-[210px] w-[232px] bg-[url('@img/home/texture.webp')] bg-[length:720px] bg-center bg-no-repeat mix-blend-color-dodge blur-[.0313rem] brightness-[90%]"
                 />
                 <p class="mt-4 text-sm">
                     Reach out to me using the contact form below or email me at
@@ -316,7 +318,7 @@ import ItemTooltip from '@/components/items/ItemTooltip.vue';
                     and I will respond promptly.
                 </p>
                 <a
-                    class="mt-8 block w-full rounded-btn bg-custom-citrus px-14 py-4 text-center text-custom-white transition-colors duration-400 hover:bg-opacity-90"
+                    class="mt-8 block w-full rounded-max bg-primary-accent px-14 py-4 text-center text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
                     href="#contact"
                     aria-label="Go to the contact form"
                 >

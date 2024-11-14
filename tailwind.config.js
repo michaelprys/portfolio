@@ -1,47 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    'content': [
+    content: [
         './index.html',
         './src/**/*.{vue,js,ts,jsx,tsx}'
     ],
-    'theme': {
-        'extend': {
-            'container': {
-                'screens': {
-                    'sm': '600px',
-                    'md': '728px',
-                    'lg': '984px',
-                    'xl': '1168px'
+    theme: {
+        extend: {
+            container: {
+                screens: {
+                    sm: '37.5rem',
+                    md: '45.5rem',
+                    lg: '61.5rem',
+                    xl: '73rem'
                 }
             },
-            'colors': {
-                'custom-gray-1': '#17171b',
-                // 'custom-gray-1': '#131316',
-                // 'custom-citrus': '#3c4457',
-                // 'custom-citrus': '#1D1F36',
-                'custom-citrus': '#800020 ',
-                'custom-white': '#FEFEFE',
-                // 'custom-decoration': '#BFBFBF ',
-                'custom-decoration': '#800020',
-                'custom-gray-2': '#55555b',
-                'custom-gray-3': '#faf3e0cc',
-                'custom-focus': '#414146',
-                'custom-dark-1': '#FAF3E0',
-                'custom-dark-2': '#080809',
-                'custom-subtext': '#BFBFBF '
+            colors: {
+                'primary-common': 'rgb(var(--primary-common))',
+                'secondary-common': 'rgb(var(--secondary-common))',
+                'nav-bg': 'rgb(var(--nav-bg))',
+                'nav-hover': 'rgb(var(--nav-hover))',
+                'tooltip-bg': 'rgb(var(--tooltip-bg))',
+                'primary-text': 'rgb(var(--primary-text))',
+                'muted-text': 'rgb(var(--muted-text))',
+                'primary-accent': 'rgb(var(--primary-accent))',
+                'secondary-accent': 'rgb(var(--secondary-accent))',
+                'border-primary': 'rgb(var(--border-primary)),'
             },
-            'borderRadius': {
-                '4xl': '2rem',
-                'btn': '4rem'
+            borderRadius: {
+                common: '32px',
+                max: '9999px'
             },
-            'transitionDuration': {
-                '400': '400ms'
+            transitionDuration: {
+                400: '400ms'
             }
         },
-        'fontFamily': {
-            'primary': ['Gotham'],
-            'secondary': ['Retro Signature']
+        fontFamily: {
+            primary: ['Gotham'],
+            secondary: ['Retro Signature']
         }
     },
-    'plugins': []
+    plugins: []
 };

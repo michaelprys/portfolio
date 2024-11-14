@@ -7,7 +7,7 @@ import IconTailwind from '@/components/icons/IconTailwind.vue';
 import IconValibot from '@/components/icons/IconValibot.vue';
 import ItemTooltip from '@/components/items/ItemTooltip.vue';
 
-import {usePlayVideo} from '@/use/usePlayVideo';
+import { usePlayVideo } from '@/use/usePlayVideo';
 
 const project1 = usePlayVideo();
 </script>
@@ -22,7 +22,7 @@ const project1 = usePlayVideo();
         >
             <li>
                 <figure
-                    class="rounded-4xl bg-custom-gray-1 p-6"
+                    class="rounded-common bg-primary-common p-6"
                     @mouseover="project1.playVideo"
                     @mouseleave="project1.stopVideo"
                 >
@@ -49,13 +49,14 @@ const project1 = usePlayVideo();
                         <video
                             :ref="project1.videoRef"
                             class="absolute top-0 h-[13.125rem] w-full rounded-3xl object-cover opacity-0 transition-opacity duration-300"
+                            :class="{
+                                'opacity-100': project1.state.value,
+                            }"
                             width="320px"
                             height="210px"
                             muted
                             loop
-                            :class="{
-                                'opacity-100': project1.state.value,
-                            }"
+                            aria-hidden="true"
                         >
                             <source
                                 src="@/assets/videos/lows-n-lines-preview.mp4"
@@ -66,12 +67,12 @@ const project1 = usePlayVideo();
                     <figcaption class="mt-4 text-xl font-bold">
                         Lows-n-Lines
                     </figcaption>
-                    <p class="mt-2 text-custom-subtext">
+                    <p class="mt-2 text-muted-text">
                         A lowrider selling platform, featuring a system for
                         inquiries between buyers and sellers.
                     </p>
                     <ul
-                        class="mt-6 inline-flex items-center gap-4 rounded-4xl bg-custom-dark-2 px-4 py-2 *:will-change-contents"
+                        class="mt-6 inline-flex items-center gap-4 rounded-common bg-secondary-common px-4 py-2 *:will-change-contents"
                     >
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
@@ -153,7 +154,7 @@ const project1 = usePlayVideo();
                             <IconLink aria-label="View Lows-n-Lines project" />
                             <div class="relative">
                                 <span
-                                    class="after:absolute after:-bottom-[2px] after:left-0 after:h-[1px] after:w-0 after:bg-custom-white after:transition-all after:duration-400 after:group-hover:w-[6.3rem]"
+                                    class="after:absolute after:-bottom-[2px] after:left-0 after:h-[1px] after:w-0 after:bg-primary-text after:transition-all after:duration-400 after:group-hover:w-[6.3rem]"
                                 >
                                     View Project
                                 </span>

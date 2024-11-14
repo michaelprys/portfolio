@@ -1,25 +1,26 @@
-import pluginVue from 'eslint-plugin-vue';
 import stylistic from '@stylistic/eslint-plugin';
+import pluginVue from 'eslint-plugin-vue';
+
 export default [
     {
-        'plugins': {
+        plugins: {
             '@stylistic': stylistic,
             'vue': pluginVue
         },
-        'rules': {
+        rules: {
             // Stylistic
             '@stylistic/comma-dangle': ['error', 'never'],
             '@stylistic/indent': ['error', 4],
             '@stylistic/quotes': ['error', 'single'],
             '@stylistic/semi': 'error',
-            '@stylistic/no-multiple-empty-lines': ['error', { 'max': 1, 'maxBOF': 0, 'maxEOF': 1 }],
+            '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 1 }],
             // Vue
             'vue/html-indent': ['error', 4]
         },
-        'files': ['**/*.{js,mjs,jsx,vue}']
+        files: ['**/*.{js,mjs,jsx,vue}']
     },
     {
-        'ignores': [
+        ignores: [
             '**/dist/**',
             '**/dist-ssr/**',
             '**/coverage/**'

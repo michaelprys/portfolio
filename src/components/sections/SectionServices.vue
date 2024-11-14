@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import IconCode from '@/components/icons/IconCode.vue';
 import IconGear from '@/components/icons/IconGear.vue';
 import IconLock from '@/components/icons/IconLock.vue';
@@ -6,27 +6,27 @@ import IconRocket from '@/components/icons/IconRocket.vue';
 </script>
 
 <template>
-    <section   section id="services" class="container mx-auto pb-16 pt-12">
+    <section id="services" class="container mx-auto pb-16 pt-12">
         <h1 class="text-center text-4xl font-light uppercase">
             Services
         </h1>
         <ul
-            class="mt-16 grid grid-cols-4 gap-8 *:max-w-[23rem] *:cursor-pointer *:rounded-4xl *:bg-custom-gray-1 *:p-6 *:shadow-xl *:transition-transform *:duration-300 *:will-change-contents"
+            class="mt-16 grid grid-cols-4 gap-8 *:max-w-[23rem] *:cursor-pointer *:rounded-common *:bg-primary-common *:p-6 *:shadow-xl *:transition-transform *:duration-300 *:will-change-contents"
         >
             <li class="hover:-translate-y-3">
-                <div class='relative'>
+                <div class="relative">
                     <div
-                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration"
+                        class="ml-2 h-16 w-16 rounded-full bg-primary-accent"
                     />
                     <IconCode
-                        class="absolute -bottom-4 left-0 *:fill-custom-white"
+                        class="absolute -bottom-4 left-0 *:fill-primary-text"
                     />
                 </div>
 
                 <h2 class="mt-8 text-xl font-bold">
                     Responsive & Accessible UI
                 </h2>
-                <p class="mt-5 text-custom-subtext">
+                <p class="mt-5 text-muted-text">
                     Creating responsive and accessible interfaces using relative
                     units, modern CSS techniques, and semantic HTML.
                 </p>
@@ -34,17 +34,17 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration"
+                        class="ml-2 h-16 w-16 rounded-full bg-primary-accent"
                     />
                     <IconRocket
-                        class="absolute -bottom-4 left-0 *:fill-custom-white"
+                        class="absolute -bottom-4 left-0 *:fill-primary-text"
                     />
                 </div>
 
                 <h2 class="mt-8 text-xl font-bold">
                     Performance & Optimization
                 </h2>
-                <p class="mt-5 text-custom-subtext">
+                <p class="mt-5 text-muted-text">
                     Applying load optimization strategies and utilizing powerful
                     asset formats to significantly improve the performance.
                 </p>
@@ -52,17 +52,17 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration"
+                        class="ml-2 h-16 w-16 rounded-full bg-primary-accent"
                     />
                     <IconGear
-                        class="absolute -bottom-4 left-0 *:fill-custom-white"
+                        class="absolute -bottom-4 left-0 *:fill-primary-text"
                     />
                 </div>
 
                 <h2 class="mt-8 text-xl font-bold">
                     API Integration & State Management
                 </h2>
-                <p class="mt-5 text-custom-subtext">
+                <p class="mt-5 text-muted-text">
                     Integrating third-party APIs and managing state with
                     composables or Pinia for smooth and reliable data handling.
                 </p>
@@ -70,17 +70,17 @@ import IconRocket from '@/components/icons/IconRocket.vue';
             <li class="hover:-translate-y-3">
                 <div class="relative">
                     <div
-                        class="ml-2 h-16 w-16 rounded-full bg-custom-decoration"
+                        class="ml-2 h-16 w-16 rounded-full bg-primary-accent"
                     />
                     <IconLock
-                        class="absolute -bottom-4 left-0 *:fill-custom-white"
+                        class="absolute -bottom-4 left-0 *:fill-primary-text"
                     />
                 </div>
 
                 <h2 class="mt-8 text-xl font-bold">
                     Authentication & Validation
                 </h2>
-                <p class="mt-5 text-custom-subtext">
+                <p class="mt-5 text-muted-text">
                     Using session-based authentication with httpOnly cookies and
                     tools such as Valibot for accurate data validation.
                 </p>

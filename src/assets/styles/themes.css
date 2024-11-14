@@ -1,0 +1,12 @@
+.theme-red {
+    --primary-common: 23 23 28;
+    --secondary-common: 8 8 8;
+    --nav-bg: 45 45 52;
+    --nav-hover: 73 73 85;
+    --tooltip-bg: 74 74 85;
+    --primary-text: 255 255 255;
+    --muted-text: 191 191 191;
+    --primary-accent: 128 0 32;
+    --secondary-accent: 250 243 224;
+    --border-primary: 64 64 69;
+}
