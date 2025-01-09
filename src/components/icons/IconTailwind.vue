@@ -1,7 +1,7 @@
 <template>
     <svg
-        width="24"
-        height="15"
+        width="1.5rem"
+        height=".9375rem"
         viewBox="0 0 24 15"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,7 @@
                         width="24"
                         height="15"
                     >
-                        <path
-                            d="M23.9918 0H0.00823975V14.4285H23.9918V0Z"
-                            fill="white"
-                        />
+                        <path d="M23.9918 0H0.00823975V14.4285H23.9918V0Z" fill="white" />
                     </mask>
                     <g mask="url(#mask0_115_177)">
                         <path
@@ -45,10 +42,18 @@
                 <stop offset="1" stop-color="#0ED7B5" />
             </linearGradient>
             <clipPath id="clip0_115_177">
-                <rect width="24" height="14.55" fill="white" />
+                <rect
+                    width="24"
+                    height="14.55"
+                    fill="white"
+                />
             </clipPath>
             <clipPath id="clip1_115_177">
-                <rect width="24" height="14.55" fill="white" />
+                <rect
+                    width="24"
+                    height="14.55"
+                    fill="white"
+                />
             </clipPath>
             <clipPath id="clip2_115_177">
                 <rect

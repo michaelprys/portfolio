@@ -1,7 +1,7 @@
 <template>
     <svg
-        width="24"
-        height="28"
+        width="1.5rem"
+        height="1.5rem"
         viewBox="0 0 24 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,18 @@
         </g>
         <defs>
             <clipPath id="clip0_115_143">
-                <rect width="24" height="27.36" fill="white" />
+                <rect
+                    width="24"
+                    height="27.36"
+                    fill="white"
+                />
             </clipPath>
             <clipPath id="clip1_115_143">
-                <rect width="24" height="27.36" fill="white" />
+                <rect
+                    width="24"
+                    height="27.36"
+                    fill="white"
+                />
             </clipPath>
         </defs>
     </svg>

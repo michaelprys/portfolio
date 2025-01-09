@@ -7,13 +7,13 @@ import SectionExperience from '@/components/sections/SectionExperience.vue';
 import SectionHome from '@/components/sections/SectionHome.vue';
 import SectionProjects from '@/components/sections/SectionProjects.vue';
 import SectionServices from '@/components/sections/SectionServices.vue';
-import { onMounted, ref, onBeforeUnmount, watchEffect  } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const currentSection = ref('');
 
-const startScroll = () => {
+function startScroll() {
     const sections = document.querySelectorAll('section[id]');
-    let scroll = window.scrollY;
+    const scroll = window.scrollY;
 
     sections.forEach((current) => {
         const sectionTop = current.offsetTop - 64;
@@ -23,7 +23,9 @@ const startScroll = () => {
             currentSection.value = sectionId;
         }
     });
-};
+}
+
+// function onIntersect() {}
 
 onMounted(() => {
     startScroll();
@@ -35,10 +37,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <ItemNav :currentSection="currentSection" />
+    <ItemNav :current-section="currentSection" />
 
     <main>
-        <div class="fixed left-0 top-0 -z-10 h-full w-full bg-[url('/src/assets/images/bg.webp')] bg-[cover] bg-center bg-no-repeat opacity-[8%]" />
         <SectionHome />
         <SectionProjects />
         <SectionServices />

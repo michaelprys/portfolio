@@ -1,0 +1,28 @@
+<script setup>
+import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
+
+const observerRef = ref(null);
+const isVisible = ref(false);
+
+watchEffect(() => console.log('isVisible: ', isVisible.value));
+
+onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                isVisible.value = true;
+                observer.disconnect();
+            }
+        });
+    });
+    if (observerRef.value) {
+        observer.observe(observerRef.value);
+    }
+});
+</script>
+
+<template>
+    <div ref="observerRef">
+        <slot :isVisible="isVisible"></slot>
+    </div>
+</template>

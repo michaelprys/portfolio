@@ -5,7 +5,11 @@ import IconHome from '@/components/icons/IconHome.vue';
 import IconProject from '@/components/icons/IconProject.vue';
 import IconService from '@/components/icons/IconService.vue';
 
-const props = defineProps(['currentSection']);
+const props = defineProps({
+    currentSection: {
+        type: String
+    }
+});
 
 const components = {
     home: IconHome,
@@ -17,15 +21,29 @@ const components = {
 </script>
 
 <template>
-    <nav class="fixed shadow-xl z-[999] right-12 top-1/2 -translate-y-1/2">
-        <ul class="flex flex-col gap-4 rounded-max bg-nav-bg px-4 py-8">
+    <nav
+        class="fixed bottom-7 left-1/2 top-auto z-[999] w-[88%] -translate-x-1/2 translate-y-0 rounded-full shadow-xl
+    sm:w-max xl:h-max xl:w-auto xxl:left-auto xxl:right-12 xxl:top-1/2 xxl:-translate-x-0 xxl:-translate-y-1/2 xxl:px-0"
+    >
+        <ul
+            class="flex flex-row items-center justify-between gap-4 rounded-full bg-nav-bg/20 px-8 py-4
+            backdrop-blur-[.5rem] xxl:flex-col xxl:px-4 xxl:py-8"
+            style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)"
+        >
             <li
-                v-for="(value, key) in components" :key="key" class="group rounded-full transition-colors duration-400 *:block *:p-2" :class="{
-                    'h-10 w-10 bg-primary-accent hover:bg-primary-accent/90 inline-flex items-center justify-center object-cover p-2': key === props.currentSection,
-                    'h-10 w-10 hover:bg-nav-hover hover:bg-opacity-20': key !== props.currentSection,
+                v-for="(value, key) in components"
+                :key="key"
+                class="inline-flex items-center justify-center rounded-full transition-colors duration-400 *:block"
+                :class="{
+                    'bg-primary-accent object-cover hover:bg-primary-accent/90': key === props.currentSection,
+                    'hover:bg-zinc-300/20': key !== props.currentSection,
                 }"
             >
-                <a :href="`#${key}`" :aria-label="`Go to the ${key} section`">
+                <a
+                    class="rounded-full p-2"
+                    :href="`#${key}`"
+                    :aria-label="`Go to the ${key} section`"
+                >
                     <component :is="value" />
                 </a>
             </li>

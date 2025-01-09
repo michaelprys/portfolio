@@ -10,8 +10,8 @@ function scrollToTop() {
     }
     else {
         isCrossed.value = false;
-    };
-}
+    }
+};
 
 onMounted(() => {
     window.addEventListener('scroll', scrollToTop);
@@ -23,9 +23,12 @@ onBeforeUnmount(() => {
 
 <template>
     <a
-        class="fixed bottom-[50px] right-[67px] cursor-pointer rounded-lg bg-nav-bg p-1 transition-transform duration-400 hover:-translate-y-2"
-        :class="[isCrossed ? 'translate-y-0' : 'translate-y-[300%]']" href="#"
+        class="fixed bottom-[8.125rem] right-4 cursor-pointer rounded-lg bg-nav-bg/20 p-1 backdrop-blur-[.5rem]
+        transition-transform duration-400 hover:-translate-y-2 md:bottom-[3.125rem] xl:right-[4.1875rem]"
+        :class="[isCrossed ? 'translate-y-0' : 'translate-y-[700%]']"
+        href="#"
         aria-label="Go to the beginning of the page"
+        style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)"
     >
         <IconArrow />
     </a>
