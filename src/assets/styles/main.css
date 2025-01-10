@@ -74,11 +74,21 @@ body {
     animation-delay: 1000ms;
 }
 
+.fade-in-primary,
+.fade-in-secondary,
 .fade-in-down {
     visibility: hidden;
     opacity: 0;
-    animation: fadeInDown 1s cubic-bezier(0.5, 0, 0.5, 1) forwards;
     will-change: opacity, transform;
+}
+.fade-in-primary {
+    animation: fade-in 1s 0.2s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+.fade-in-secondary {
+    animation: fade-in 1s 0.8s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+.fade-in-down {
+    animation: fade-in-down 1s cubic-bezier(0.5, 0, 0.5, 1) forwards;
 }
 
 .fade-in-down:nth-child(1) {
@@ -102,7 +112,17 @@ body {
     opacity: 0;
 }
 
-@keyframes fadeInDown {
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+@keyframes fade-in-down {
     from {
         visibility: hidden;
         opacity: 0;
@@ -140,4 +160,17 @@ body {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+.slide-enter-active {
+    transition: transform 0.4s;
+}
+
+.slide-leave-active {
+    transition: transform 0.4s;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    transform: translateX(130%);
 }

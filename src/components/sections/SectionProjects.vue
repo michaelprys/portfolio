@@ -15,8 +15,13 @@ const project1 = usePlayVideo();
 
 <template>
     <section id="projects" class="pb-12 pt-8 xl:pb-16 xl:pt-12">
-        <h2 class="text-center text-h1 font-light uppercase">Latest projects</h2>
         <ItemObserver v-slot="{ isVisible }">
+            <h2
+                class="text-center text-h1 font-light uppercase"
+                :class="isVisible ? 'fade-in-secondary' : 'invisible'"
+            >
+                Latest projects
+            </h2>
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <ul
                     class="mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,_23rem)]"

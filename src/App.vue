@@ -1,6 +1,7 @@
 <script setup>
 import ItemNav from '@/components/items/ItemNav.vue';
 import ItemScrollTop from '@/components/items/ItemScrollTop.vue';
+import ItemToast from '@/components/items/ItemToast.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 import SectionContact from '@/components/sections/SectionContact.vue';
 import SectionExperience from '@/components/sections/SectionExperience.vue';
@@ -51,5 +52,6 @@ onBeforeUnmount(() => {
 
     <Teleport to="body">
         <ItemScrollTop />
+        <ItemToast />
     </Teleport>
 </template>

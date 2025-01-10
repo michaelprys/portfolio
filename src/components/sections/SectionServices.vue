@@ -8,9 +8,14 @@ import ItemObserver from '@/components/items/ItemObserver.vue';
 
 <template>
     <section id="services" class="pb-12 pt-8 xl:pb-16 xl:pt-12">
-        <h2 class="text-center text-h1 font-light uppercase">Services</h2>
-        <div class="container">
-            <ItemObserver v-slot="{ isVisible }">
+        <ItemObserver v-slot="{ isVisible }">
+            <h2
+                class="text-center text-h1 font-light uppercase"
+                :class="isVisible ? 'fade-in-primary' : 'invisible'"
+            >
+                Services
+            </h2>
+            <div class="container">
                 <ul
                     class="mt-10 grid grid-cols-1 justify-center gap-6 *:cursor-pointer *:rounded-common *:bg-primary-common *:p-6 *:shadow-xl *:transition-none *:duration-300 *:will-change-contents sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] lg:*:transition-transform xl:mt-16 xl:grid-cols-[repeat(4,_16.75rem)]"
                 >
@@ -79,7 +84,7 @@ import ItemObserver from '@/components/items/ItemObserver.vue';
                         </p>
                     </li>
                 </ul>
-            </ItemObserver>
-        </div>
+            </div>
+        </ItemObserver>
     </section>
 </template>

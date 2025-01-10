@@ -4,8 +4,13 @@ import ItemObserver from '@/components/items/ItemObserver.vue';
 
 <template>
     <section id="experience" class="pb-12 pt-8 xl:pb-16 xl:pt-12">
-        <h2 class="text-center text-h1 font-light uppercase">Experience</h2>
         <ItemObserver v-slot="{ isVisible }">
+            <h2
+                class="text-center text-h1 font-light uppercase"
+                :class="isVisible ? 'fade-in-primary' : 'invisible'"
+            >
+                Experience
+            </h2>
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <div
                     class="mt-10 grid justify-center gap-y-4 sm:grid-cols-[23.75rem] md:grid-cols-[20rem_23.75rem] md:items-center xl:mt-16 xl:grid-cols-[21.875rem_31.875rem] xl:gap-x-32"
