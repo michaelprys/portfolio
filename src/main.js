@@ -1,8 +1,10 @@
-import { createApp } from 'vue';
-import App from './App.vue';
 import '@style/font-face.css';
-import '@style/themes.css';
-
 import '@style/main.css';
+import '@style/themes.css';
+import { ViteSSG } from 'vite-ssg/single-page';
+// import { createApp } from 'vue';
+import App from './App.vue';
 
-createApp(App).mount('#app');
+export const createApp = ViteSSG(App);
+
+// createApp(App).mount('#app');

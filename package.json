@@ -8,10 +8,10 @@
         "build": "vite build",
         "preview": "vite preview",
         "lint": "eslint .",
-        "fix": "eslint . --fix"
+        "fix": "eslint . --fix",
+        "generate": "vite-ssg build"
     },
     "dependencies": {
-        "@unhead/vue": "^1.11.13",
         "@vuelidate/core": "^2.0.3",
         "@vuelidate/validators": "^2.0.4",
         "vue": "^3.5.13"

@@ -79,8 +79,8 @@ import ItemObserver from '@/components/items/ItemObserver.vue';
 
                         <h2 class="mt-8 text-h3 font-bold">Authentication & Validation</h2>
                         <p class="mt-3 text-muted-text">
-                            Using session-based authentication and tools such as Valibot for
-                            accurate data validation.
+                            Using session-based authentication and tools such as Valibot/Vuelidate
+                            for data validation.
                         </p>
                     </li>
                 </ul>
