@@ -1,10 +1,10 @@
 <script setup>
 import IconFigma from '@/components/icons/IconFigma.vue';
-import IconGit from '@/components/icons/IconGit.vue';
 import IconGithub from '@/components/icons/IconGithub.vue';
 import IconLinkedin from '@/components/icons/IconLinkedin.vue';
 import IconNuxt from '@/components/icons/IconNuxt.vue';
 import IconPostgres from '@/components/icons/IconPostgres.vue';
+import IconPrimeVue from '@/components/icons/IconPrimeVue.vue';
 import IconSass from '@/components/icons/IconSass.vue';
 import IconShadcn from '@/components/icons/IconShadcn.vue';
 import IconStackoverflow from '@/components/icons/IconStackoverflow.vue';
@@ -68,7 +68,7 @@ onMounted(() => {
                         </div>
                         <a
                             class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center text-secondary-common transition-colors duration-400 hover:bg-primary-accent hover:text-primary-text"
-                            href="https://drive.google.com/file/d/1QqW8lMEr9nvzF3a_OUnPP30FZS1ZZG-i/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1uj4-0TWTJEp17UwAo__wbnZHKv3b5D-S/view?usp=sharing"
                             target="_blank"
                         >
                             View CV
@@ -129,12 +129,26 @@ onMounted(() => {
                             <ItemTooltip
                                 class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
                             >
+                                PrimeVue
+                            </ItemTooltip>
+                            <a
+                                href="https://primevue.org"
+                                target="_blank"
+                                aria-label="PrimeVue UI framework"
+                            >
+                                <IconPrimeVue />
+                            </a>
+                        </li>
+                        <li class="group transition-transform hover:scale-125">
+                            <ItemTooltip
+                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
+                            >
                                 Shadcn
                             </ItemTooltip>
                             <a
                                 href="https://ui.shadcn.com"
                                 target="_blank"
-                                aria-label="Shadcn component library"
+                                aria-label="Shadcn unstyled component library"
                             >
                                 <IconShadcn />
                             </a>
@@ -167,20 +181,7 @@ onMounted(() => {
                                 <IconPostgres />
                             </a>
                         </li>
-                        <li class="group transition-transform hover:scale-125">
-                            <ItemTooltip
-                                class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                            >
-                                Git
-                            </ItemTooltip>
-                            <a
-                                href="https://git-scm.com"
-                                target="_blank"
-                                aria-label="Git version control"
-                            >
-                                <IconGit />
-                            </a>
-                        </li>
+
                         <li class="group transition-transform hover:scale-125">
                             <ItemTooltip
                                 class="opacity-0 group-hover:opacity-100 group-hover:delay-500"

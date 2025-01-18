@@ -1,105 +1,75 @@
 <script setup>
+import IconSpinner from '@/components/icons/IconSpinner.vue';
 import ItemObserver from '@/components/items/ItemObserver.vue';
 import ItemValidationError from '@/components/items/ItemValidationError.vue';
-import emailjs from '@emailjs/browser';
-import IconSpinner from '@/components/icons/IconSpinner.vue';
-import { ref, reactive, computed } from 'vue';
 import { useToast } from '@/use/useToast';
+import emailjs from '@emailjs/browser';
+import useVuelidate from '@vuelidate/core';
+import { email, minLength, required } from '@vuelidate/validators';
+import { computed, reactive, ref } from 'vue';
 
 const { showToast } = useToast();
 
 const messagePending = ref(false);
 
-const formInputs = reactive({
+const form = reactive({
     name: '',
     email: '',
     message: ''
 });
 
-const validationError = reactive({
-    name: null,
-    email: null,
-    message: null
+const schema = computed(() => {
+    return {
+        name: { required, minLength: minLength(1) },
+        email: { required, email },
+        message: { required, minLength: minLength(1) }
+    };
 });
 
-const isEmptyErrorField = ref(false);
+const v$ = useVuelidate(schema, form);
 
-const validationSchema = {
-    name: {
-        validate: (value) => value.trim().length > 0,
-        errorMessage: 'Name field should not be empty'
-    },
-    email: {
-        validate: (value) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value),
-        errorMessage: 'Please enter a valid email address'
-    },
-    message: {
-        validate: (value) => value.trim().length > 0,
-        errorMessage: 'Message field should not be empty'
-    }
-};
-
-const isValidated = computed(() => {
-    return Object.keys(validationSchema).every((key) => {
-        return validationSchema[key].validate(formInputs[key]);
-    });
-});
-
-const showValidationError = () => {
-    Object.keys(validationSchema).forEach((key) => {
-        const isValidInput = validationSchema[key].validate(formInputs[key]);
-
-        if (!isValidInput) {
-            validationError[key] = validationSchema[key].errorMessage;
-        } else {
-            validationError[key] = null;
-        }
-    });
-};
-
-const resetFields = (target) => {
+const resetForm = (target) => {
     Object.keys(target).forEach((key) => {
         target[key] = '';
     });
 };
 
+const isSubmitted = ref(false);
+
 const sendMessage = () => {
-    if (!isValidated.value) {
-        showValidationError();
-        return;
-    }
-
-    if (!isEmptyErrorField.value) {
-        resetFields(validationError);
-        isEmptyErrorField.value = true;
-    }
-
     if (messagePending.value) {
         return;
     }
 
-    messagePending.value = true;
+    isSubmitted.value = true;
 
-    emailjs
-        .send(
-            `${import.meta.env.VITE_SERVICE_ID}`,
-            `${import.meta.env.VITE_TEMPLATE_ID}`,
-            formInputs,
-            {
-                publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`
-            }
-        )
-        .then(
-            (response) => {
-                showToast('success', 'Message was sent');
-                messagePending.value = false;
-            },
-            (err) => {
-                showToast('failed', "Message wasn't sent");
-                messagePending.value = false;
-            }
-        );
-    resetFields(formInputs);
+    v$.value.$validate();
+
+    if (!v$.value.$error) {
+        messagePending.value = true;
+        emailjs
+            .send(
+                `${import.meta.env.VITE_SERVICE_ID}`,
+                `${import.meta.env.VITE_TEMPLATE_ID}`,
+                form,
+                {
+                    publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`
+                }
+            )
+            .then(
+                (response) => {
+                    showToast('success', 'Message was sent');
+                    resetForm(form);
+                    isSubmitted.value = false;
+                    messagePending.value = false;
+                },
+                (err) => {
+                    showToast('failed', "Message wasn't sent");
+                    isSubmitted.value = false;
+                    messagePending.value = false;
+                }
+            );
+    }
 };
 </script>
 
@@ -128,9 +98,12 @@ const sendMessage = () => {
                             name="name"
                             placeholder="Your Name"
                             required
-                            v-model="formInputs.name"
+                            v-model="form.name"
                         />
-                        <ItemValidationError :validationError="validationError.name" />
+                        <ItemValidationError
+                            v-if="isSubmitted"
+                            :validationError="v$.name.$errors[0]?.$message"
+                        />
                     </div>
                     <div class="col-span-2 xl:col-span-1 xl:col-start-2">
                         <label class="sr-only" for="email"> Your email </label>
@@ -141,9 +114,12 @@ const sendMessage = () => {
                             name="email"
                             placeholder="Email *"
                             required
-                            v-model="formInputs.email"
+                            v-model="form.email"
                         />
-                        <ItemValidationError :validationError="validationError.email" />
+                        <ItemValidationError
+                            v-if="isSubmitted"
+                            :validationError="v$.email.$errors[0]?.$message"
+                        />
                     </div>
                     <div class="col-span-2">
                         <label class="sr-only" for="msg">Enter your message</label>
@@ -153,9 +129,12 @@ const sendMessage = () => {
                             name="message"
                             placeholder="Enter Your Message"
                             required
-                            v-model="formInputs.message"
+                            v-model="form.message"
                         />
-                        <ItemValidationError :validationError="validationError.message" />
+                        <ItemValidationError
+                            v-if="isSubmitted"
+                            :validationError="v$.message.$errors[0]?.$message"
+                        />
                     </div>
                     <div
                         class="col-span-2 mx-auto w-full max-w-full xl:row-start-3 xl:max-w-[225px]"
