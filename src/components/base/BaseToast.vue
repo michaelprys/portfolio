@@ -1,5 +1,5 @@
 <script setup>
-import { useToast } from '@/use/useToast';
+import { useToast } from '@/composables/useToast';
 
 const { isVisible, statusMessage, closeToast } = useToast();
 </script>
@@ -12,8 +12,7 @@ const { isVisible, statusMessage, closeToast } = useToast();
             :class="[statusMessage.success ? 'bg-emerald-600' : 'bg-red-600']"
             role="alert"
             tabindex="-1"
-            aria-labelledby="toast"
-        >
+            aria-labelledby="toast">
             <div class="flex p-4">
                 {{ statusMessage.success || statusMessage.failed }}
 
@@ -22,8 +21,7 @@ const { isVisible, statusMessage, closeToast } = useToast();
                         type="button"
                         class="ml-2.5 inline-flex size-5 shrink-0 items-center justify-center rounded-lg text-white opacity-50 transition-opacity hover:text-white hover:opacity-100 focus:opacity-100 focus:outline-none"
                         aria-label="Close"
-                        @click="closeToast"
-                    >
+                        @click="closeToast">
                         <span class="sr-only">Close</span>
                         <svg
                             class="size-4 shrink-0"
@@ -35,8 +33,7 @@ const { isVisible, statusMessage, closeToast } = useToast();
                             stroke="currentColor"
                             stroke-width="2"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
+                            stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                         </svg>

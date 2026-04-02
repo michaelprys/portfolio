@@ -26,8 +26,7 @@ onBeforeUnmount(() => {
         :class="[isCrossed ? 'translate-y-0' : 'translate-y-[700%]']"
         href="#"
         aria-label="Go to the beginning of the page"
-        style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)"
-    >
+        style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
         <IconArrow />
     </a>
 </template>

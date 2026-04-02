@@ -1,0 +1,54 @@
+@theme {
+    --breakpoint-sm: 33.75rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 75rem;
+    --breakpoint-xxl: 93.75rem;
+
+    --color-primary-common: rgb(var(--primary-common));
+    --color-secondary-common: rgb(var(--secondary-common));
+    --color-nav-bg: rgb(var(--nav-bg));
+    --color-nav-hover: rgb(var(--nav-hover));
+    --color-tooltip-bg: rgb(var(--tooltip-bg));
+    --color-primary-text: rgb(var(--primary-text));
+    --color-muted-text: rgb(var(--muted-text));
+    --color-primary-accent: rgb(var(--primary-accent));
+    --color-secondary-accent: rgb(var(--secondary-accent));
+    --color-border-primary: rgb(var(--border-primary));
+
+    --radius-common: 2rem;
+    --duration-400: 400ms;
+
+    --font-primary: 'Gotham', sans-serif;
+    --font-secondary: 'Retro Signature', cursive;
+
+    --text-h1: clamp(1.5rem, 0.8864rem + 1.8182vw, 2.25rem);
+    --text-h2: clamp(1.25rem, 0.7386rem + 1.5152vw, 1.875rem);
+    --text-h3: clamp(1.125rem, 1.0227rem + 0.303vw, 1.25rem);
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    width: 100%;
+
+    @media (width >= 33.75rem) {
+        max-width: 33.75rem;
+    }
+    @media (width >= 48rem) {
+        max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+        max-width: 64rem;
+    }
+    @media (width >= 75rem) {
+        max-width: 75rem;
+    }
+    @media (width >= 93.75rem) {
+        max-width: 93.75rem;
+    }
+}
+
+@utility grid-cols-fit-icon {
+    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
+}

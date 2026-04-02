@@ -1,9 +1,5 @@
 <template>
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1.4em"
-        height="1.4em"
-        viewBox="0 0 15 15">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 15 15">
         <path
             fill="currentColor"
             fillRule="evenodd"

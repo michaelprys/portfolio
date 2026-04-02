@@ -1,10 +1,10 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 export function usePlayVideo() {
-    const videoRef = ref(null);
-    const state = ref(false);
-    const isPlaying = ref(false);
-    const isTablet = ref(window.innerWidth < 1200);
+    const videoRef = ref(null),
+        state = ref(false),
+        isPlaying = ref(false),
+        isTablet = ref(window.innerWidth < 1200);
 
     const playVideo = () => {
         if (videoRef.value && !isTablet.value) {
@@ -41,6 +41,6 @@ export function usePlayVideo() {
         isTablet,
         videoRef,
         playVideo,
-        stopVideo
+        stopVideo,
     };
 }

@@ -1,0 +1,25 @@
+@layer base {
+    :root {
+        --primary-common: 23 23 28;
+        --secondary-common: 8 8 8;
+        --nav-bg: 45 45 52;
+        --nav-hover: 78 78 90;
+        --tooltip-bg: 74 74 85;
+        --primary-text: 255 255 255;
+        --muted-text: 191 191 191;
+        --primary-accent: 52 147 105;
+        --secondary-accent: 255 250 240;
+        --border-primary: 60 60 60;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #080808;
+        color: #ffffff;
+        font-family: 'Gotham', sans-serif;
+        font-size: clamp(0.938rem, 0.8873rem + 0.1503vw, 1rem);
+    }
+}

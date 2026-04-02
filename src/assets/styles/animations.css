@@ -1,0 +1,106 @@
+@layer components {
+    .common,
+    .profile,
+    .info,
+    .about,
+    .tech {
+        opacity: 0;
+        animation: 2.5s cubic-bezier(0.5, 0, 0, 1) forwards;
+    }
+
+    .common,
+    .profile {
+        animation-name: fade-to-bottom;
+        animation-delay: 400ms;
+    }
+    .info {
+        animation-name: fade-to-right;
+        animation-delay: 800ms;
+    }
+    .about {
+        animation-name: fade-to-left;
+        animation-delay: 1200ms;
+    }
+    .tech {
+        animation-name: fade-to-right;
+        animation-delay: 1000ms;
+    }
+
+    .fade-in-primary,
+    .fade-in-secondary,
+    .fade-in-down {
+        visibility: hidden;
+        opacity: 0;
+        will-change: opacity, transform;
+    }
+
+    .fade-in-primary {
+        animation: fade-in 1s 0.2s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+    }
+    .fade-in-secondary {
+        animation: fade-in 1s 0.8s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+    }
+    .fade-in-down {
+        animation: fade-in-down 1s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+    }
+
+    @keyframes fade-in {
+        from {
+            visibility: hidden;
+            opacity: 0;
+        }
+        to {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    @keyframes fade-in-down {
+        from {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+        to {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fade-to-right {
+        from {
+            transform: translateX(-60px);
+        }
+        to {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes fade-to-left {
+        from {
+            transform: translateX(60px);
+        }
+        to {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes fade-to-bottom {
+        from {
+            transform: translateY(-60px);
+        }
+        to {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+
+    /* Vue Transitions */
+    .slide-enter-active,
+    .slide-leave-active {
+        transition: transform 0.4s;
+    }
+    .slide-enter-from,
+    .slide-leave-to {
+        transform: translateX(130%);
+    }
+}

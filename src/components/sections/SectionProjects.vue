@@ -1,167 +1,91 @@
 <script setup>
 import IconLink from '@/components/icons/IconLink.vue';
-import IconNuxt from '@/components/icons/IconNuxt.vue';
-import IconPostgres from '@/components/icons/IconPostgres.vue';
-import IconShadcn from '@/components/icons/IconShadcn.vue';
-import IconTailwind from '@/components/icons/IconTailwind.vue';
-import IconValibot from '@/components/icons/IconValibot.vue';
-import ItemTooltip from '@/components/items/ItemTooltip.vue';
-import ItemObserver from '@/components/items/ItemObserver.vue';
-import { usePlayVideo } from '@/use/usePlayVideo';
-import { watchEffect } from 'vue';
+import BaseIcon from '@/components/base/BaseIcon.vue';
+import BaseObserver from '@/components/base/BaseObserver.vue';
+import { usePlayVideo } from '@/composables/usePlayVideo';
+import projects from '@/assets/projects.json';
 
-const project1 = usePlayVideo();
+const videoInstance = projects.map(() => usePlayVideo());
 </script>
 
 <template>
     <section id="projects" class="pb-12 pt-8 xl:pb-16 xl:pt-12">
-        <ItemObserver v-slot="{ isVisible }">
+        <BaseObserver v-slot="{ isVisible }">
             <h2
                 class="text-center text-h1 font-light uppercase"
-                :class="isVisible ? 'fade-in-secondary' : 'invisible'"
-            >
+                :class="isVisible ? 'fade-in-secondary' : 'invisible'">
                 Latest projects
             </h2>
+
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <ul
-                    class="mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,_23rem)]"
-                >
-                    <li>
+                    class="min-h-124.5 h-full mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,_23rem)]">
+                    <li v-for="(project, idx) in projects" :key="project.id">
                         <figure
-                            class="rounded-common bg-primary-common p-6"
-                            @mouseover="project1.playVideo"
-                            @mouseleave="project1.stopVideo"
-                        >
+                            class="flex flex-col h-[31.125rem] rounded-common bg-primary-common p-6"
+                            @mouseover="videoInstance[idx].playVideo"
+                            @mouseleave="videoInstance[idx].stopVideo">
                             <div
-                                class="relative cursor-pointer overflow-hidden rounded-3xl"
-                                @click="project1.toggleVideo"
-                            >
+                                class="relative cursor-pointer overflow-hidden rounded-3xl flex-shrink-0">
                                 <picture>
                                     <source
-                                        srcset="@img/projects/lows-n-lines.avif"
-                                        type="image/avif"
-                                    />
+                                        :srcset="`/src/${project.imageUrl}.avif`"
+                                        type="image/avif" />
                                     <img
-                                        class="h-60 w-full rounded-3xl object-cover opacity-100 transition-opacity duration-300 sm:h-[13.125rem]"
+                                        class="h-60 w-full rounded-3xl object-cover opacity-100 transition-opacity duration-300 sm:h-52.5"
                                         :class="{
-                                            'opacity-0': !project1.isPlaying.value
+                                            'opacity-0': !videoInstance[idx].isPlaying.value,
                                         }"
-                                        src="@img/projects/lows-n-lines.webp"
+                                        :src="`/src/${project.imageUrl}.webp`"
                                         width="42.6875rem"
                                         height="24rem"
                                         loading="lazy"
-                                        alt="Lows-n-Lines project"
-                                    />
+                                        :alt="`${project.name} project`" />
                                 </picture>
+
                                 <video
-                                    :ref="project1.videoRef"
-                                    class="absolute top-0 h-[210px] w-full rounded-3xl object-cover opacity-0 transition-opacity duration-300 sm:h-[240px]"
-                                    :class="{
-                                        'opacity-100': project1.isPlaying.value
-                                    }"
+                                    :ref="(el) => (videoInstance[idx].videoRef.value = el)"
+                                    class="absolute top-0 h-52.5 w-full rounded-3xl object-cover opacity-0 transition-opacity duration-300 sm:h-60"
+                                    :class="{ 'opacity-100': videoInstance[idx].isPlaying.value }"
                                     width="20rem"
                                     height="13.125rem"
                                     muted
                                     loop
-                                    aria-hidden="true"
-                                >
+                                    aria-hidden="true">
                                     <source
-                                        src="@/assets/videos/lows-n-lines-preview.mp4"
-                                        type="video/mp4"
-                                    />
+                                        :src="`/src/${project.videoUrl}.mp4`"
+                                        type="video/mp4" />
                                 </video>
                             </div>
-                            <figcaption class="mt-4 text-h3 font-bold">Lows-n-Lines</figcaption>
-                            <p class="mt-2 text-muted-text">
-                                A lowrider selling platform, featuring a system for inquiries
-                                between buyers and sellers.
+
+                            <figcaption class="mt-4 text-h3 font-bold">
+                                {{ project.name }}
+                            </figcaption>
+
+                            <p class="mt-2 text-muted-text line-clamp-3">
+                                {{ project.description }}
                             </p>
-                            <div class="inline-flex flex-col items-start">
+
+                            <div class="mt-auto flex flex-col items-start">
                                 <ul
-                                    class="mr-auto mt-6 inline-flex flex-wrap items-center gap-4 rounded-common bg-secondary-common px-4 py-2 *:will-change-contents"
-                                >
-                                    <li class="group transition-transform hover:scale-125">
-                                        <ItemTooltip
-                                            class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                                        >
-                                            Nuxt.js
-                                        </ItemTooltip>
-                                        <a
-                                            href="https://nuxt.com"
-                                            target="_blank"
-                                            aria-label="Nuxt.js"
-                                        >
-                                            <IconNuxt />
-                                        </a>
-                                    </li>
-                                    <li class="group transition-transform hover:scale-125">
-                                        <ItemTooltip
-                                            class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                                        >
-                                            Shadcn
-                                        </ItemTooltip>
-                                        <a
-                                            href="https://ui.shadcn.com"
-                                            target="_blank"
-                                            aria-label="Shadcn component library"
-                                        >
-                                            <IconShadcn />
-                                        </a>
-                                    </li>
-                                    <li class="group transition-transform hover:scale-125">
-                                        <ItemTooltip
-                                            class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                                        >
-                                            TailwindCSS
-                                        </ItemTooltip>
-                                        <a
-                                            href="https://tailwindcss.com"
-                                            target="_blank"
-                                            aria-label="TailwindCSS framework"
-                                        >
-                                            <IconTailwind />
-                                        </a>
-                                    </li>
-                                    <li class="group transition-transform hover:scale-125">
-                                        <ItemTooltip
-                                            class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                                        >
-                                            Valibot
-                                        </ItemTooltip>
-                                        <a
-                                            href="https://valibot.dev"
-                                            target="_blank"
-                                            aria-label="Valibot schema library"
-                                        >
-                                            <IconValibot />
-                                        </a>
-                                    </li>
-                                    <li class="group transition-transform hover:scale-125">
-                                        <ItemTooltip
-                                            class="opacity-0 group-hover:opacity-100 group-hover:delay-500"
-                                        >
-                                            PostgreSQL
-                                        </ItemTooltip>
-                                        <a
-                                            href="https://www.postgresql.org"
-                                            target="_blank"
-                                            aria-label="PostgreSQL database"
-                                        >
-                                            <IconPostgres />
-                                        </a>
+                                    class="mr-auto mt-6 inline-flex flex-wrap items-center gap-4 rounded-common bg-secondary-common px-4 py-2 *:will-change-contents">
+                                    <li
+                                        v-for="icon in project.icons"
+                                        :key="icon.name"
+                                        class="group transition-transform hover:scale-125">
+                                        <BaseIcon :name="icon.name" :url="icon.url" />
                                     </li>
                                 </ul>
+
                                 <div class="group ml-1 mt-6 inline-flex">
                                     <a
                                         class="inline-flex items-center gap-2.5 font-medium"
-                                        href="https://lows-n-lines.netlify.app/"
-                                        target="_blank"
-                                    >
-                                        <IconLink aria-label="View Lows-n-Lines project" />
+                                        :href="project.url"
+                                        target="_blank">
+                                        <IconLink :aria-label="`View ${project.name} project`" />
                                         <div class="relative">
                                             <span
-                                                class="after:absolute after:bottom-[-2px] after:left-0 after:h-[.0625rem] after:w-0 after:bg-primary-text after:transition-all after:duration-400 after:group-hover:w-[100.8px]"
-                                            >
+                                                class="relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary-text after:transition-transform after:duration-400 group-hover:after:scale-x-100">
                                                 View Project
                                             </span>
                                         </div>
@@ -172,6 +96,6 @@ const project1 = usePlayVideo();
                     </li>
                 </ul>
             </div>
-        </ItemObserver>
+        </BaseObserver>
     </section>
 </template>

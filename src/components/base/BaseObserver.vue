@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const observerRef = ref(null);
 const isVisible = ref(false);

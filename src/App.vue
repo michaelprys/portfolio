@@ -1,11 +1,11 @@
 <script setup>
-import ItemNav from '@/components/items/ItemNav.vue';
-import ItemScrollTop from '@/components/items/ItemScrollTop.vue';
-import ItemToast from '@/components/items/ItemToast.vue';
+import AppNav from '@/components/layout/AppNav.vue';
+import BaseScrollTop from '@/components/base/BaseScrollTop.vue';
+import BaseToast from '@/components/base/BaseToast.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 import SectionContact from '@/components/sections/SectionContact.vue';
 import SectionExperience from '@/components/sections/SectionExperience.vue';
-import SectionHome from '@/components/sections/SectionHome.vue';
+import SectionHero from '@/components/sections/SectionHero.vue';
 import SectionProjects from '@/components/sections/SectionProjects.vue';
 import SectionServices from '@/components/sections/SectionServices.vue';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
@@ -26,8 +26,6 @@ function startScroll() {
     });
 }
 
-// function onIntersect() {}
-
 onMounted(() => {
     startScroll();
     window.addEventListener('scroll', startScroll);
@@ -38,10 +36,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <ItemNav :current-section="currentSection" />
+    <AppNav :current-section="currentSection" />
 
     <main>
-        <SectionHome />
+        <SectionHero />
         <SectionProjects />
         <SectionServices />
         <SectionExperience />
@@ -51,7 +49,7 @@ onBeforeUnmount(() => {
     <AppFooter />
 
     <Teleport to="body">
-        <ItemScrollTop />
-        <ItemToast />
+        <BaseScrollTop />
+        <BaseToast />
     </Teleport>
 </template>

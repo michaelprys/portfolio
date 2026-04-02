@@ -1,37 +1,24 @@
-# Portfolio
+# 📖 Frontend Developer Portfolio
 
-This is my personal portfolio built with Vue 3, showcasing my projects, skills, and background. Its purpose is to give visitors an easy way to learn more about me and the work I do.
+**Focusing on the intersection of clean logic and refined user experience.**
 
-This template should help get you started developing with Vue 3 in Vite.
+[Personal Portflio](https://prysiazhnyi.netlify.app) • [LinkedIn](https://www.linkedin.com/in/michael-prys-622712336)
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Core Stack
 
-## Customize configuration
+**Vue 3 Ecosystem** (Composition API, Pinia, Router, VueUse)  
+TypeScript, JavaScript, Quasar, Supabase
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### UI & Standards
 
-## Project Setup
+Tailwind CSS, SCSS, BEM, Responsive Design, Semantic HTML, Figma
 
-```sh
-pnpm install
-```
+### Tools & Workflow
 
-### Compile and Hot-Reload for Development
+Git, Vite, pnpm, Postman, ESLint, Stylelint, WebStorm
 
-```sh
-pnpm dev
-```
+---
 
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+_Built with precision using Vue 3 & Vite._
