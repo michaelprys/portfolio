@@ -37,28 +37,32 @@ import BaseObserver from '@/components/base/BaseObserver.vue';
                             <li>
                                 Integrating
                                 <b>External APIs</b>
+                                for dynamic data flow
                             </li>
                             <li>Implementing modern web standards and responsive design</li>
                         </ul>
                     </div>
 
                     <h3 class="text-h2">
-                        Digital Producer
+                        Digital Media Producer
                         <br class="hidden md:block" />
                     </h3>
                     <div class="rounded-common bg-primary-common p-8 shadow-xl">
                         <span class="block text-h3 font-bold">9 Years of Experience</span>
                         <span class="mt-1 block text-sm text-muted-text">
-                            Digital Product Creation
+                            Digital Media Production
                         </span>
                         <ul class="mt-4 list-disc pl-5 text-muted-text space-y-1">
-                            <li>Proven track record in Product Ownership</li>
-                            <li>End-to-end management from concept to market launch</li>
                             <li>
-                                <b>Autonomous workflow</b>
-                                in sync with product vision
+                                Focused on transforming creative visions into high-quality digital
+                                products.
                             </li>
-                            <li>Accountability for delivery and measurable results</li>
+                            <li>
+                                Managed the full project lifecycle from concept to final market
+                                launch.
+                            </li>
+                            <li>Navigated complex ecosystems to meet professional standards.</li>
+                            <li>Worked autonomously to deliver clear, measurable results.</li>
                         </ul>
                     </div>
                 </div>

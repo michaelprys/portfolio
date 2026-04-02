@@ -81,14 +81,13 @@ onMounted(() => {
 
                             <div class="-mt-3">
                                 <p class="text-body mt-3 xl:mt-2">
-                                    Building web applications with Vue 3 and TypeScript. I focus on
-                                    creating responsive interfaces that are intuitive, smooth, and
-                                    effortless to navigate across all platforms and devices.
+                                    Developing web applications using Vue 3 and TypeScript. I
+                                    prioritize creating responsive interfaces that are user-focused
+                                    and work consistently across all platforms and devices.
                                 </p>
                                 <p class="text-body mt-3.5">
-                                    By prioritizing balanced design and subtle details, I refine the
-                                    user experience to make every interaction feel fluid and
-                                    polished.
+                                    I value organized code and practical design, keeping the product
+                                    stable, easy to navigate, and simple to maintain.
                                 </p>
                             </div>
                         </div>
@@ -163,10 +162,10 @@ onMounted(() => {
                     <h2 class="sr-only">About</h2>
                     <span>
                         Mykhailo Prysiazhnyi -
-                        <span class="font-bold">Web Developer</span>
+                        <span class="font-bold">Frontend Developer</span>
                     </span>
-                    <p class="mt-4">
-                        I develop web applications, constantly improving my skills through practice.
+                    <p class="mt-4 leading-relaxed max-w-[240px]">
+                        Building stable, clean, and intuitive web applications.
                     </p>
                     <ul class="mt-8 flex items-center justify-center gap-6">
                         <li
