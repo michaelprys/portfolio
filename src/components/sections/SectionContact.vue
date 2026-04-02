@@ -5,24 +5,25 @@ import BaseValidationError from '@/components/base/BaseValidationError.vue';
 import { useToast } from '@/composables/useToast';
 import emailjs from '@emailjs/browser';
 import useVuelidate from '@vuelidate/core';
-import { email, minLength, required } from '@vuelidate/validators';
+import { email, minLength, required, maxLength } from '@vuelidate/validators';
 import { computed, reactive, ref } from 'vue';
 
 const { showToast } = useToast();
-
 const messagePending = ref(false);
+const isSubmitted = ref(false);
 
 const form = reactive({
     name: '',
     email: '',
     message: '',
+    website: '',
 });
 
 const schema = computed(() => {
     return {
-        name: { required, minLength: minLength(1) },
+        name: { required, minLength: minLength(2), maxLength: maxLength(50) },
         email: { required, email },
-        message: { required, minLength: minLength(1) },
+        message: { required, minLength: minLength(5), maxLength: maxLength(2000) },
     };
 });
 
@@ -34,40 +35,62 @@ const resetForm = (target) => {
     });
 };
 
-const isSubmitted = ref(false);
-
 const sendMessage = () => {
-    if (messagePending.value) {
+    if (messagePending.value) return;
+
+    if (form.website) {
+        showToast('success', 'Message sent successfully');
+        resetForm(form);
+        return;
+    }
+
+    const STORAGE_KEY_COUNT = 'contact_form_count';
+    const STORAGE_KEY_TIME = 'contact_form_last_reset';
+    const MAX_EMAILS = 5;
+    const DAY_IN_MS = 24 * 60 * 60 * 1000;
+
+    const now = Date.now();
+    const lastReset = Number(localStorage.getItem(STORAGE_KEY_TIME) || 0);
+    let count = Number(localStorage.getItem(STORAGE_KEY_COUNT) || 0);
+
+    if (now - lastReset > DAY_IN_MS) {
+        count = 0;
+        localStorage.setItem(STORAGE_KEY_TIME, now.toString());
+    }
+
+    if (count >= MAX_EMAILS) {
+        showToast('failed', 'Daily limit reached. Please try again tomorrow.');
         return;
     }
 
     isSubmitted.value = true;
-
     v$.value.$validate();
 
     if (!v$.value.$error) {
         messagePending.value = true;
+
         emailjs
             .send(
-                `${import.meta.env.VITE_SERVICE_ID}`,
-                `${import.meta.env.VITE_TEMPLATE_ID}`,
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
                 form,
-                {
-                    publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
-                },
+                import.meta.env.VITE_PUBLIC_KEY,
             )
             .then(() => {
-                showToast('success', 'Message was sent');
+                count++;
+                localStorage.setItem(STORAGE_KEY_COUNT, count.toString());
+
+                showToast('success', 'Message sent successfully');
                 resetForm(form);
                 isSubmitted.value = false;
                 messagePending.value = false;
+                v$.value.$reset();
             })
-            .catch(() => {
-                () => {
-                    showToast('failed', "Message wasn't sent");
-                    isSubmitted.value = false;
-                    messagePending.value = false;
-                };
+            .catch((error) => {
+                console.error(error);
+                showToast('failed', 'Failed to send message');
+                isSubmitted.value = false;
+                messagePending.value = false;
             });
     }
 };
@@ -87,6 +110,13 @@ const sendMessage = () => {
                     action=""
                     novalidate
                     @submit.prevent="sendMessage">
+                    <input
+                        type="text"
+                        v-model="form.website"
+                        class="absolute -z-50 opacity-0"
+                        tabindex="-1"
+                        autocomplete="off" />
+
                     <div class="col-span-2 xl:col-span-1 xl:col-start-1">
                         <label class="sr-only" for="name">Your name</label>
                         <input
@@ -131,11 +161,7 @@ const sendMessage = () => {
                     <div
                         class="col-span-2 mx-auto w-full max-w-full xl:row-start-3 xl:max-w-[225px]">
                         <button
-                            class="mt-5 w-full rounded-full bg-primary-accent py-4 text-center text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
-                            :class="{
-                                'disabled:border-zinc-400 disabled:bg-zinc-300 disabled:text-zinc-500 disabled:shadow-none':
-                                    messagePending,
-                            }"
+                            class="mt-5 w-full rounded-full bg-primary-accent py-4 text-center text-primary-text transition-colors duration-400 disabled:bg-zinc-300 disabled:text-zinc-500"
                             disabled
                             v-if="messagePending">
                             <span class="flex items-center justify-center gap-2">
