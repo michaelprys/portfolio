@@ -4,8 +4,8 @@
         "name": "Anima",
         "description": "AI journal with NLP sentiment analysis. Features Supabase authentication and a custom sci-fi design.",
         "url": "https://anima-core.netlify.app",
-        "videoUrl": "assets/videos/anima",
-        "imageUrl": "assets/images/projects/anima",
+        "videoUrl": "/assets/videos/anima",
+        "imageUrl": "/assets/images/projects/anima",
         "icons": [
             { "name": "Vue 3", "url": "https://vuejs.org" },
             { "name": "Pinia", "url": "https://pinia.vuejs.org" },
@@ -20,8 +20,8 @@
         "name": "Zigzag's Workshop",
         "description": "Gamified shop with virtual currency and top-ups. Includes product filtering, auth, custom design and more.",
         "url": "https://zigzags-workshop.netlify.app",
-        "videoUrl": "assets/videos/zigzags-workshop-preview",
-        "imageUrl": "assets/images/projects/zigzags-workshop",
+        "videoUrl": "/assets/videos/zigzags-workshop-preview",
+        "imageUrl": "/assets/images/projects/zigzags-workshop",
         "icons": [
             { "name": "Vue 3", "url": "https://vuejs.org" },
             { "name": "Quasar", "url": "https://quasar.dev" },
@@ -37,8 +37,8 @@
         "name": "Haze",
         "description": "Photo platform with native camera support. Built with Vue 3 and Quasar for smooth mobile experience.",
         "url": "https://hazeapp.netlify.app",
-        "videoUrl": "assets/videos/haze-preview",
-        "imageUrl": "assets/images/projects/haze",
+        "videoUrl": "/assets/videos/haze-preview",
+        "imageUrl": "/assets/images/projects/haze",
         "icons": [
             { "name": "Vue 3", "url": "https://vuejs.org" },
             { "name": "Quasar", "url": "https://quasar.dev" },

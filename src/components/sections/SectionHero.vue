@@ -48,7 +48,7 @@ onMounted(() => {
         <h1 class="sr-only">Introduction</h1>
         <div class="container">
             <div
-                class="grid grid-cols-1 items-stretch justify-center gap-6 sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] md:grid-rows-[27.9375rem_15.9375rem_23.625rem] xl:grid-cols-[17.5rem_35rem_17.5rem] xl:grid-rows-none">
+                class="grid grid-cols-1 items-stretch justify-center gap-6 sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,21.875rem)] md:grid-rows-[27.9375rem_15.9375rem_23.625rem] xl:grid-cols-[17.5rem_35rem_17.5rem] xl:grid-rows-none">
                 <section
                     class="info row-start-2 rounded-common bg-primary-common px-6 py-8 md:col-start-2 md:row-start-1 xl:col-start-1">
                     <h2 class="sr-only">Info</h2>
@@ -66,9 +66,7 @@ onMounted(() => {
                                     autoplay
                                     muted
                                     aria-hidden="true">
-                                    <source
-                                        src="@/assets/videos/handwriting.mp4"
-                                        type="video/mp4" />
+                                    <source src="/assets/videos/handwriting.mp4" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="-mt-3">
@@ -120,7 +118,7 @@ onMounted(() => {
                     class="profile relative col-start-1 row-start-1 grid grid-rows-[21rem] overflow-hidden rounded-common sm:grid-rows-[17rem] md:grid-rows-none xl:col-start-2 xl:row-span-2">
                     <img
                         class="absolute left-0 top-0 row-span-2 size-full overflow-hidden rounded-common object-cover"
-                        src="@img/home/profile.webp"
+                        src="/assets/images/home/profile.webp"
                         width="1243"
                         height="1710"
                         alt="Profile photo" />
@@ -179,7 +177,7 @@ onMounted(() => {
                     </ul>
                     <div class="flex h-[8.75rem] items-center justify-center overflow-hidden">
                         <div
-                            class="mx-auto mt-2 h-[13.125rem] w-[14.5rem] bg-[url('@/assets/images/home/texture.webp')] bg-[length:45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-[90%]" />
+                            class="mx-auto mt-2 h-[13.125rem] w-[14.5rem] bg-[url('/assets/images/home/texture.webp')] bg-[length:45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-[90%]" />
                     </div>
                     <p class="mt-4 text-sm">
                         Feel free to use the contact form below or email me at

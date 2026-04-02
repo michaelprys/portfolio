@@ -1,8 +1,8 @@
 # 📖 Frontend Developer Portfolio
 
-**Focusing on the intersection of clean logic and refined user experience.**
+**Creating responsive web applications using Vue 3, TypeScript, and modern CSS.**
 
-[Personal Portflio](https://prysiazhnyi.netlify.app) • [LinkedIn](https://www.linkedin.com/in/michael-prys-622712336)
+[Personal Portflio](https://prysiazhnyi.netlify.app) • [LinkedIn](https://www.linkedin.com/in/prysiazhnyi-dev)
 
 ---
 

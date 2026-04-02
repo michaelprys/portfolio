@@ -3,7 +3,7 @@ import IconLink from '@/components/icons/IconLink.vue';
 import BaseIcon from '@/components/base/BaseIcon.vue';
 import BaseObserver from '@/components/base/BaseObserver.vue';
 import { usePlayVideo } from '@/composables/usePlayVideo';
-import projects from '@/assets/projects.json';
+import projects from '../../../public/assets/projects.json';
 
 const videoInstance = projects.map(() => usePlayVideo());
 </script>
@@ -19,24 +19,24 @@ const videoInstance = projects.map(() => usePlayVideo());
 
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <ul
-                    class="min-h-124.5 h-full mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,_21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,_23rem)]">
+                    class="min-h-124.5 h-full mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,23rem)]">
                     <li v-for="(project, idx) in projects" :key="project.id">
                         <figure
-                            class="flex flex-col h-[31.125rem] rounded-common bg-primary-common p-6"
+                            class="flex flex-col h-124.5 rounded-common bg-primary-common p-6"
                             @mouseover="videoInstance[idx].playVideo"
                             @mouseleave="videoInstance[idx].stopVideo">
                             <div
-                                class="relative cursor-pointer overflow-hidden rounded-3xl flex-shrink-0">
+                                class="relative cursor-pointer overflow-hidden rounded-3xl shrink-0">
                                 <picture>
                                     <source
-                                        :srcset="`/src/${project.imageUrl}.avif`"
+                                        :srcset="`${project.imageUrl}.avif`"
                                         type="image/avif" />
                                     <img
                                         class="h-60 w-full rounded-3xl object-cover opacity-100 transition-opacity duration-300 sm:h-52.5"
                                         :class="{
                                             'opacity-0': !videoInstance[idx].isPlaying.value,
                                         }"
-                                        :src="`/src/${project.imageUrl}.webp`"
+                                        :src="`${project.imageUrl}.webp`"
                                         width="42.6875rem"
                                         height="24rem"
                                         loading="lazy"
@@ -52,9 +52,7 @@ const videoInstance = projects.map(() => usePlayVideo());
                                     muted
                                     loop
                                     aria-hidden="true">
-                                    <source
-                                        :src="`/src/${project.videoUrl}.mp4`"
-                                        type="video/mp4" />
+                                    <source :src="`${project.videoUrl}.mp4`" type="video/mp4" />
                                 </video>
                             </div>
 

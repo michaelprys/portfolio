@@ -1,34 +1,34 @@
 @font-face {
     font-family: 'Retro Signature';
-    src: url('@/assets/fonts/RetroSignatureRegular.woff2') format('woff2');
+    src: url('../../../public/assets/fonts/RetroSignatureRegular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('../fonts/Gotham-Light.woff2') format('woff2');
+    src: url('../../../public/assets/fonts/Gotham-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('../fonts/Gotham-Book.woff2') format('woff2');
+    src: url('../../../public/assets/fonts/Gotham-Book.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('../fonts/Gotham-Medium.woff2') format('woff2');
+    src: url('../../../public/assets/fonts/Gotham-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('../fonts/Gotham-Bold.woff2') format('woff2');
+    src: url('../../../public/assets/fonts/Gotham-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
