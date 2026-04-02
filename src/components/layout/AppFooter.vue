@@ -45,7 +45,7 @@ const currentDate = new Date().getFullYear();
                         <li class="transition-transform hover:scale-125">
                             <a
                                 class="rounded-full"
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/prysiazhnyi-dev"
                                 target="_blank"
                                 aria-label="Linkedin profile">
                                 <IconLinkedin

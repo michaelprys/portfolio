@@ -21,7 +21,7 @@ const show = ref(false);
 const socialLinks = [
     {
         name: 'linkedin',
-        url: 'https://www.linkedin.com/',
+        url: 'https://www.linkedin.com/in/prysiazhnyi-dev',
         icon: IconLinkedin,
     },
     {
