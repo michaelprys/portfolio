@@ -144,7 +144,7 @@ const sendMessage = () => {
                             </span>
                         </button>
                         <button
-                            class="mt-5 w-full rounded-full bg-primary-accent py-4 text-center text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
+                            class="mt-5 w-full cursor-pointer rounded-full bg-primary-accent py-4 text-center text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
                             v-else>
                             <span>Send message</span>
                         </button>
