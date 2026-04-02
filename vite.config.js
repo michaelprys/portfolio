@@ -8,8 +8,6 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
-            '@img': fileURLToPath(new URL('./src/assets/images', import.meta.url)),
-            '@icon': fileURLToPath(new URL('./src/components/icons', import.meta.url)),
         },
     },
 });

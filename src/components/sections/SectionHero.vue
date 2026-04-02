@@ -66,7 +66,7 @@ onMounted(() => {
                                     autoplay
                                     muted
                                     aria-hidden="true">
-                                    <source src="/assets/videos/handwriting.mp4" type="video/mp4" />
+                                    <source src="/videos/handwriting.mp4" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="-mt-3">
@@ -118,12 +118,12 @@ onMounted(() => {
                     class="profile relative col-start-1 row-start-1 grid grid-rows-[21rem] overflow-hidden rounded-common sm:grid-rows-[17rem] md:grid-rows-none xl:col-start-2 xl:row-span-2">
                     <img
                         class="absolute left-0 top-0 row-span-2 size-full overflow-hidden rounded-common object-cover"
-                        src="/assets/images/home/profile.webp"
+                        src="/images/home/profile.webp"
                         width="1243"
                         height="1710"
                         alt="Profile photo" />
                     <div
-                        class="row-start-2 m-4 self-end rounded-common border-2 border-white/50 bg-[#030303]/10 p-6 backdrop-blur-[.5rem] xl:m-8 xl:max-w-[23.125rem]"
+                        class="row-start-2 m-4 self-end rounded-common border-2 border-white/50 bg-[#030303]/10 p-6 backdrop-blur-sm xl:m-8 xl:max-w-92.5"
                         style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
                         <h2 class="text-[1.625rem] font-light text-primary-common xl:text-[2rem]">
                             Mykhailo
@@ -175,9 +175,9 @@ onMounted(() => {
                             </a>
                         </li>
                     </ul>
-                    <div class="flex h-[8.75rem] items-center justify-center overflow-hidden">
+                    <div class="flex h-35 items-center justify-center overflow-hidden">
                         <div
-                            class="mx-auto mt-2 h-[13.125rem] w-[14.5rem] bg-[url('/assets/images/home/texture.webp')] bg-[length:45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-[90%]" />
+                            class="mx-auto mt-2 h-52.5 w-58 bg-[url('/images/home/texture.webp')] bg-size-[45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-90" />
                     </div>
                     <p class="mt-4 text-sm">
                         Feel free to use the contact form below or email me at

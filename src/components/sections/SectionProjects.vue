@@ -3,7 +3,7 @@ import IconLink from '@/components/icons/IconLink.vue';
 import BaseIcon from '@/components/base/BaseIcon.vue';
 import BaseObserver from '@/components/base/BaseObserver.vue';
 import { usePlayVideo } from '@/composables/usePlayVideo';
-import projects from '../../../public/assets/projects.json';
+import projects from '@/assets/projects.json';
 
 const videoInstance = projects.map(() => usePlayVideo());
 </script>
