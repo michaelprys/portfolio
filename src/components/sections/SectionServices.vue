@@ -25,8 +25,8 @@ import BaseObserver from '@/components/base/BaseObserver.vue';
                         </div>
                         <h2 class="mt-8 text-h3 font-bold">Intelligent Features</h2>
                         <p class="mt-3 text-muted-text">
-                            Connecting applications with AI models via Hugging Face Inference API
-                            and GEO services.
+                            Integrating AI features via Hugging Face Inference API and
+                            location-based services.
                         </p>
                     </li>
 
