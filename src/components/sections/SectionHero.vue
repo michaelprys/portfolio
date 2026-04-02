@@ -57,20 +57,20 @@ onMounted(() => {
                             <div class="mx-auto -mt-2 flex h-12 items-center gap-2">
                                 <span class="size-8 shrink-0 rounded-full bg-primary-accent" />
 
+                                <span class="block font-secondary text-4xl ml-2 mr-7 md:hidden">
+                                    Prysiazhnyi
+                                </span>
                                 <div
-                                    class="relative overflow-hidden"
+                                    class="hidden md:block relative overflow-hidden"
                                     style="mix-blend-mode: screen; isolation: isolate">
                                     <video
                                         class="object-contain contrast-150"
                                         style="filter: contrast(1.5)"
                                         playsinline
-                                        webkit-playsinline
                                         autoplay
                                         muted
-                                        preload="auto"
                                         disablePictureInPicture="true"
                                         disableRemotePlayback="true"
-                                        controlslist="nodownload nofullscreen noremoteplayback"
                                         width="144"
                                         height="79"
                                         aria-hidden="true">
