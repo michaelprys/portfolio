@@ -1,24 +1,20 @@
-# 📖 Frontend Developer Portfolio
+# 🌑 Frontend Developer Portfolio
 
-**Creating responsive web applications using Vue 3, TypeScript, and modern CSS.**
+> *Creating responsive web applications using Vue 3, TypeScript, and modern CSS.*
 
-[Personal Portflio](https://prysiazhnyi.netlify.app) • [LinkedIn](https://www.linkedin.com/in/prysiazhnyi-dev)
+[Personal Portfolio](https://prysiazhnyi.netlify.app) / [LinkedIn](https://www.linkedin.com/in/prysiazhnyi-dev)
 
 ---
 
-### Core Stack
-
+### ⌇ Core Stack
 **Vue 3 Ecosystem** (Composition API, Pinia, Router, VueUse)  
 TypeScript, JavaScript, Quasar, Supabase
 
-### UI & Standards
-
+### 〰 UI & Standards
 Tailwind CSS, SCSS, BEM, Responsive Design, Semantic HTML, Figma
 
-### Tools & Workflow
-
+### ⌗ Tools & Workflow
 Git, Vite, pnpm, Postman, ESLint, Stylelint, WebStorm
 
 ---
-
-_Built with precision using Vue 3 & Vite._
+**Made with Vue 3 and Tailwind CSS**
