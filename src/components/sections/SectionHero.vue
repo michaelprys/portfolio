@@ -55,20 +55,30 @@ onMounted(() => {
                     <div class="flex h-full flex-col justify-between">
                         <div class="flex flex-col items-center gap-3">
                             <div class="mx-auto -mt-2 flex h-12 items-center gap-2">
-                                <span class="size-8 rounded-full bg-primary-accent" />
-                                <video
-                                    class="object-contain mix-blend-screen contrast-150"
-                                    disablePictureInPicture="true"
-                                    disableRemotePlayback="true"
-                                    controlslist="nodownload nofullscreen noremoteplayback"
-                                    width="144"
-                                    height="79"
-                                    autoplay
-                                    muted
-                                    aria-hidden="true">
-                                    <source src="/videos/handwriting.mp4" type="video/mp4" />
-                                </video>
+                                <span class="size-8 shrink-0 rounded-full bg-primary-accent" />
+
+                                <div
+                                    class="relative overflow-hidden"
+                                    style="mix-blend-mode: screen; isolation: isolate">
+                                    <video
+                                        class="object-contain contrast-150"
+                                        style="filter: contrast(1.5)"
+                                        playsinline
+                                        webkit-playsinline
+                                        autoplay
+                                        muted
+                                        preload="auto"
+                                        disablePictureInPicture="true"
+                                        disableRemotePlayback="true"
+                                        controlslist="nodownload nofullscreen noremoteplayback"
+                                        width="144"
+                                        height="79"
+                                        aria-hidden="true">
+                                        <source src="/videos/handwriting.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
                             </div>
+
                             <div class="-mt-3">
                                 <p class="text-body mt-3 xl:mt-2">
                                     Building web applications with Vue 3 and TypeScript. I focus on
