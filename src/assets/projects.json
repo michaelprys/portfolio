@@ -35,7 +35,7 @@
     {
         "id": 3,
         "name": "Haze",
-        "description": "Photo platform with native camera support. Built with Vue 3 and Quasar for smooth mobile experience.",
+        "description": "Aesthetic cloud photo gallery with native camera support. Built with Vue 3 and Quasar for a smooth experience.",
         "url": "https://hazeapp.netlify.app",
         "videoUrl": "/videos/haze-preview",
         "imageUrl": "/images/projects/haze",
