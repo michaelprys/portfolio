@@ -1,5 +1,6 @@
 @layer base {
-    :root {
+    :root,
+    .theme-mora {
         --primary-common: 23 23 28;
         --secondary-common: 8 8 8;
         --nav-bg: 45 45 52;
@@ -7,19 +8,49 @@
         --tooltip-bg: 74 74 85;
         --primary-text: 255 255 255;
         --muted-text: 191 191 191;
-        --primary-accent: 52 147 105;
+        --primary-accent: 66 184 131;
         --secondary-accent: 255 250 240;
         --border-primary: 60 60 60;
     }
 
-    html {
-        scroll-behavior: smooth;
+    .theme-aura {
+        --primary-common: 248 248 248;
+        --secondary-common: 212 212 216;
+        --nav-bg: 24 24 27;
+        --nav-hover: 39 39 42;
+        --tooltip-bg: 9 9 11;
+        --primary-text: 18 18 18;
+        --muted-text: 82 82 91;
+        --primary-accent: 63 63 70;
+        --secondary-accent: 113 113 122;
+        --border-primary: 190 190 195;
+        --video-invert: 1;
+        --video-blend: multiply;
     }
 
-    body {
-        background-color: #080808;
-        color: #ffffff;
-        font-family: 'Gotham', sans-serif;
-        font-size: clamp(0.938rem, 0.8873rem + 0.1503vw, 1rem);
+    .theme-sona {
+        --primary-common: 10 14 26;
+        --secondary-common: 2 4 8;
+        --nav-bg: 22 30 46;
+        --nav-hover: 35 45 66;
+        --tooltip-bg: 190 18 22;
+        --primary-text: 248 250 252;
+        --muted-text: 148 163 184;
+        --primary-accent: 220 20 24;
+        --secondary-accent: 124 12 12;
+        --border-primary: 30 41 59;
+    }
+
+    .theme-luna {
+        --primary-common: 7 8 18;
+        --secondary-common: 3 4 10;
+        --nav-bg: 13 16 32;
+        --nav-hover: 25 28 52;
+        --tooltip-bg: 35 45 90;
+        --primary-text: 215 220 240;
+        --muted-text: 148 163 184;
+        --primary-accent: 60 50 145;
+        --secondary-accent: 104 186 166;
+        --border-primary: 32 36 55;
     }
 }

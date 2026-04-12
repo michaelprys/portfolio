@@ -14,8 +14,8 @@ const currentDate = new Date().getFullYear();
             :class="isVisible ? 'fade-in-primary' : 'invisible'">
             <div class="container xl:max-w-screen-xl">
                 <div
-                    class="grid items-center justify-center gap-8 md:grid-cols-[repeat(2,_max-content)] md:justify-between md:gap-10">
-                    <div class="flex flex-col items-center gap-6 md:flex-row md:gap-[4.5rem]">
+                    class="grid items-center justify-center gap-8 md:grid-cols-[repeat(2,max-content)] md:justify-between md:gap-10">
+                    <div class="flex flex-col items-center gap-6 md:flex-row md:gap-18">
                         <a
                             class="font-secondary text-[2.5rem] leading-none"
                             href="#"

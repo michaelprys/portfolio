@@ -22,11 +22,11 @@ onBeforeUnmount(() => {
 
 <template>
     <a
-        class="fade-in-secondary fixed bottom-[8.125rem] right-4 cursor-pointer rounded-lg bg-nav-bg/20 p-1 backdrop-blur-[.5rem] transition-transform duration-400 hover:-translate-y-2 md:bottom-[3.125rem] xl:right-[4.1875rem]"
+        class="fade-in-secondary fixed bottom-32.5 right-4 cursor-pointer rounded-lg bg-nav-bg/20 p-1 backdrop-blur-sm transition-transform duration-400 hover:-translate-y-2 md:bottom-12.5 xl:right-16.75"
         :class="[isCrossed ? 'translate-y-0' : 'translate-y-[700%]']"
         href="#"
         aria-label="Go to the beginning of the page"
         style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
-        <IconArrow />
+        <IconArrow class="*:fill-primary-text" />
     </a>
 </template>

@@ -3,7 +3,12 @@ import IconGithub from '@/components/icons/IconGithub.vue';
 import IconLinkedin from '@/components/icons/IconLinkedin.vue';
 import IconStackoverflow from '@/components/icons/IconStackoverflow.vue';
 import BaseIcon from '@/components/base/BaseIcon.vue';
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useTheme } from '@/composables/useTheme.js';
+
+const { getTheme, currentTheme } = useTheme();
+
+const theme = computed(() => getTheme(currentTheme.value));
 
 const icons = [
     { name: 'Vue 3', url: 'https://vuejs.org' },
@@ -61,11 +66,9 @@ onMounted(() => {
                                     Prysiazhnyi
                                 </span>
                                 <div
-                                    class="hidden md:block relative overflow-hidden"
-                                    style="mix-blend-mode: screen; isolation: isolate">
+                                    class="hidden md:block relative mix-blend-exclusion overflow-hidden contrast-150">
                                     <video
-                                        class="object-contain contrast-150"
-                                        style="filter: contrast(1.5)"
+                                        class="object-contain"
                                         playsinline
                                         autoplay
                                         muted
@@ -92,7 +95,12 @@ onMounted(() => {
                             </div>
                         </div>
                         <a
-                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center text-secondary-common transition-colors duration-400 hover:bg-primary-accent hover:text-primary-text"
+                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent hover:text-white"
+                            :class="
+                                currentTheme === 'theme-mora'
+                                    ? 'text-secondary-common'
+                                    : 'text-white'
+                            "
                             :href="cvUrl"
                             target="_blank">
                             View CV
@@ -142,13 +150,23 @@ onMounted(() => {
 
                         <div class="mt-5 flex gap-2 *:w-full *:rounded-common *:py-3.5">
                             <a
-                                class="rounded-max bg-primary-accent text-center leading-none text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
+                                class="rounded-max bg-primary-accent text-center leading-none transition-colors duration-400 hover:opacity-90"
+                                :class="
+                                    currentTheme === 'theme-mora'
+                                        ? 'text-secondary-common'
+                                        : 'text-white'
+                                "
                                 href="#projects"
                                 aria-label="Go to latest projects section">
                                 Projects
                             </a>
                             <a
-                                class="rounded-max bg-secondary-accent text-center leading-none text-primary-common transition-colors duration-400 hover:bg-primary-accent hover:text-primary-text"
+                                class="rounded-max bg-secondary-accent text-center leading-none transition-colors duration-400 hover:bg-primary-accent hover:text-white"
+                                :class="
+                                    currentTheme === 'theme-mora'
+                                        ? 'text-secondary-common'
+                                        : 'text-white'
+                                "
                                 href="#services"
                                 aria-label="Go to services section">
                                 Services
@@ -164,7 +182,7 @@ onMounted(() => {
                         Mykhailo Prysiazhnyi -
                         <span class="font-bold">Frontend Developer</span>
                     </span>
-                    <p class="mt-4 leading-relaxed max-w-[240px]">
+                    <p class="mt-4 leading-relaxed max-w-60">
                         Building stable, clean, and intuitive web applications.
                     </p>
                     <ul class="mt-8 flex items-center justify-center gap-6">
@@ -179,22 +197,29 @@ onMounted(() => {
                                 aria-label="Linkedin profile">
                                 <component
                                     :is="link.icon"
-                                    class="rounded-max size-10 rounded-full bg-primary-text object-cover p-2"
-                                    aria-label="`${link.name} profile`" />
+                                    class="rounded-max size-10 rounded-full bg-primary-text object-cover p-2 *:fill-primary-common"
+                                    :aria-label="`${link.name} profile`" />
                             </a>
                         </li>
                     </ul>
                     <div class="flex h-35 items-center justify-center overflow-hidden">
                         <div
-                            class="mx-auto mt-2 h-52.5 w-58 bg-[url('/images/home/texture.webp')] bg-size-[45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-90" />
+                            class="mx-auto mt-2 h-52.5 w-58 bg-[url('/images/home/texture.webp')] bg-size-[45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-90"
+                            :class="{
+                                'mix-blend-multiply invert opacity-70': theme?.variant === 'light',
+                            }" />
                     </div>
+
                     <p class="mt-4 text-sm">
                         Feel free to use the contact form below or email me at
                         <span class="block font-bold">prysiazhnyi.dev@gmail.com</span>
                         and I will respond promptly.
                     </p>
                     <a
-                        class="rounded-max mt-8 block w-full rounded-full bg-primary-accent py-4 text-center text-primary-text transition-colors duration-400 hover:bg-primary-accent/90"
+                        class="rounded-max mt-8 block w-full rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
+                        :class="
+                            currentTheme === 'theme-mora' ? 'text-secondary-common' : 'text-white'
+                        "
                         href="#contact"
                         aria-label="Go to the contact form">
                         Contact Me

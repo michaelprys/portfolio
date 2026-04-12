@@ -20,7 +20,7 @@ const videoInstance = projects.map(() => usePlayVideo());
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <ul
                     class="min-h-124.5 h-full mt-10 grid justify-center gap-8 *:shadow-xl sm:grid-cols-[23.75rem] md:grid-cols-[repeat(2,21.875rem)] xl:mt-16 xl:grid-cols-[repeat(3,23rem)]">
-                    <li v-for="(project, idx) in projects" :key="project.id">
+                    <li class="rounded-common" v-for="(project, idx) in projects" :key="project.id">
                         <figure
                             class="flex flex-col h-124.5 rounded-common bg-primary-common p-6"
                             @mouseover="videoInstance[idx].playVideo"
@@ -80,7 +80,9 @@ const videoInstance = projects.map(() => usePlayVideo());
                                         class="inline-flex items-center gap-2.5 font-medium"
                                         :href="project.url"
                                         target="_blank">
-                                        <IconLink :aria-label="`View ${project.name} project`" />
+                                        <IconLink
+                                            class="*:fill-primary-text"
+                                            :aria-label="`View ${project.name} project`" />
                                         <div class="relative">
                                             <span
                                                 class="relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary-text after:transition-transform after:duration-400 group-hover:after:scale-x-100">

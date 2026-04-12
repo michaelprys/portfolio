@@ -1,4 +1,5 @@
 <script setup>
+import BaseTheme from '@/components/base/BaseTheme.vue';
 import AppNav from '@/components/layout/AppNav.vue';
 import BaseScrollTop from '@/components/base/BaseScrollTop.vue';
 import BaseToast from '@/components/base/BaseToast.vue';
@@ -36,7 +37,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <AppNav :current-section="currentSection" />
+    <Teleport to="body">
+        <AppNav :current-section="currentSection" />
+    </Teleport>
 
     <main>
         <SectionHero />
@@ -49,7 +52,10 @@ onBeforeUnmount(() => {
     <AppFooter />
 
     <Teleport to="body">
-        <BaseScrollTop />
-        <BaseToast />
+        <div class="ui-overlays">
+            <BaseScrollTop />
+            <BaseToast />
+            <BaseTheme />
+        </div>
     </Teleport>
 </template>

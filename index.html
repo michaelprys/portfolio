@@ -31,8 +31,18 @@
             crossorigin />
 
         <style>
-            html,
-            body {
+            html {
+                background-color: #f4f4f5;
+                color-scheme: light dark;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                html {
+                    background-color: #080808;
+                }
+            }
+
+            html.dark {
                 background-color: #080808;
             }
         </style>

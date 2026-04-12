@@ -10,18 +10,14 @@ import BaseObserver from '@/components/base/BaseObserver.vue';
                 :class="isVisible ? 'fade-in-primary' : 'invisible'">
                 Experience
             </h2>
+
             <div class="container" :class="isVisible ? 'fade-in-down' : 'invisible'">
                 <div
-                    class="mt-10 grid justify-center gap-y-12 sm:grid-cols-[23.75rem] md:grid-cols-[20rem_23.75rem] md:items-center xl:mt-16 xl:grid-cols-[21.875rem_31.875rem] xl:gap-x-32">
-                    <h3 class="text-h2">
-                        Frontend
-                        <br class="hidden md:block" />
-                        Development
-                    </h3>
+                    class="mt-10 grid justify-center gap-y-12 sm:grid-cols-[23.75rem] md:grid-cols-[20rem_23.75rem] md:items-center md:gap-x-12 xl:mt-16 xl:grid-cols-[21.875rem_31.875rem] xl:gap-x-24">
+                    <h3 class="text-h2">Frontend Developer</h3>
+
                     <div class="rounded-common bg-primary-common p-8 shadow-xl">
-                        <span class="block text-h3 font-bold">
-                            2+ Years of Independent Development
-                        </span>
+                        <span class="block text-h3 font-bold">2+ Years of Development</span>
                         <span class="mt-1 block text-sm text-muted-text">
                             Vue 3 Ecosystem & TypeScript
                         </span>
@@ -43,10 +39,8 @@ import BaseObserver from '@/components/base/BaseObserver.vue';
                         </ul>
                     </div>
 
-                    <h3 class="text-h2">
-                        Digital Media Producer
-                        <br class="hidden md:block" />
-                    </h3>
+                    <h3 class="text-h2">Digital Media Producer</h3>
+
                     <div class="rounded-common bg-primary-common p-8 shadow-xl">
                         <span class="block text-h3 font-bold">9 Years of Experience</span>
                         <span class="mt-1 block text-sm text-muted-text">
