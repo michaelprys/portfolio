@@ -3,6 +3,8 @@ import BaseObserver from '@/components/base/BaseObserver.vue';
 import IconCopyright from '@/components/icons/IconCopyright.vue';
 import IconGithub from '@/components/icons/IconGithub.vue';
 import IconLinkedin from '@/components/icons/IconLinkedin.vue';
+import { useTheme } from '@/composables/useTheme.js';
+const { currentTheme } = useTheme();
 
 const currentDate = new Date().getFullYear();
 </script>
@@ -49,7 +51,12 @@ const currentDate = new Date().getFullYear();
                                 target="_blank"
                                 aria-label="Linkedin profile">
                                 <IconLinkedin
-                                    class="size-10 rounded-full bg-primary-accent object-cover p-2 *:fill-primary-text" />
+                                    class="size-10 rounded-full bg-primary-accent object-cover p-2"
+                                    :class="
+                                        currentTheme === 'theme-aura'
+                                            ? '*:fill-primary-common'
+                                            : '*:fill-primary-text'
+                                    " />
                             </a>
                         </li>
                         <li class="transition-transform hover:scale-125">
@@ -59,7 +66,12 @@ const currentDate = new Date().getFullYear();
                                 target="_blank"
                                 aria-label="Github profile">
                                 <IconGithub
-                                    class="size-10 rounded-full bg-primary-accent object-cover p-2 *:fill-primary-text" />
+                                    class="size-10 rounded-full bg-primary-accent object-cover p-2"
+                                    :class="
+                                        currentTheme === 'theme-aura'
+                                            ? '*:fill-primary-common'
+                                            : '*:fill-primary-text'
+                                    " />
                             </a>
                         </li>
                     </ul>
@@ -73,7 +85,8 @@ const currentDate = new Date().getFullYear();
                     </p>
                     <span
                         class="mx-auto mt-5 inline-flex items-center justify-center gap-2 leading-none text-primary-text opacity-60 transition-all duration-400 hover:opacity-100 xl:mt-8">
-                        <IconCopyright />
+                        <IconCopyright
+                            :class="{ '*:fill-primary-text': currentTheme === 'theme-aura' }" />
                         {{ currentDate }} All Rights Reserved
                     </span>
                 </div>

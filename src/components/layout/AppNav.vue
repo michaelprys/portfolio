@@ -39,7 +39,8 @@ const components = {
                 :class="{
                     'bg-primary-accent object-cover hover:bg-primary-accent/90 ':
                         key === currentSection,
-                    'hover:bg-zinc-300/20': key !== currentSection,
+                    'hover:bg-zinc-300/90': key !== currentSection && theme?.variant === 'light',
+                    'hover:bg-zinc-300/20': key !== currentSection && theme?.variant !== 'light',
                 }">
                 <a
                     class="rounded-full p-2"

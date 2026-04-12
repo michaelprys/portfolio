@@ -29,28 +29,28 @@
     }
 
     .theme-sona {
-        --primary-common: 10 14 26;
-        --secondary-common: 2 4 8;
-        --nav-bg: 22 30 46;
-        --nav-hover: 35 45 66;
-        --tooltip-bg: 190 18 22;
+        --primary-common: 15 19 32;
+        --secondary-common: 6 8 15;
+        --nav-bg: 28 36 55;
+        --nav-hover: 42 52 75;
+        --tooltip-bg: 210 25 30;
         --primary-text: 248 250 252;
-        --muted-text: 148 163 184;
-        --primary-accent: 220 20 24;
-        --secondary-accent: 124 12 12;
-        --border-primary: 30 41 59;
+        --muted-text: 160 175 195;
+        --primary-accent: 240 30 35;
+        --secondary-accent: 145 20 20;
+        --border-primary: 38 50 70;
     }
 
     .theme-luna {
-        --primary-common: 7 8 18;
-        --secondary-common: 3 4 10;
-        --nav-bg: 13 16 32;
-        --nav-hover: 25 28 52;
-        --tooltip-bg: 35 45 90;
-        --primary-text: 215 220 240;
-        --muted-text: 148 163 184;
-        --primary-accent: 60 50 145;
+        --primary-common: 14 16 35;
+        --secondary-common: 8 10 24;
+        --nav-bg: 24 30 55;
+        --nav-hover: 40 48 85;
+        --tooltip-bg: 55 72 140;
+        --primary-text: 240 245 255;
+        --muted-text: 175 190 215;
+        --primary-accent: 90 80 210;
         --secondary-accent: 104 186 166;
-        --border-primary: 32 36 55;
+        --border-primary: 48 55 80;
     }
 }

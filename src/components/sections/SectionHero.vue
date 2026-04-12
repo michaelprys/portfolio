@@ -95,11 +95,11 @@ onMounted(() => {
                             </div>
                         </div>
                         <a
-                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent hover:text-white"
+                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center transition-all duration-400 hover:bg-primary-accent hover:text-white"
                             :class="
-                                currentTheme === 'theme-mora'
-                                    ? 'text-secondary-common'
-                                    : 'text-white'
+                                currentTheme === 'theme-mora' || theme?.variant === 'light'
+                                    ? 'text-primary-common'
+                                    : 'text-primary-text'
                             "
                             :href="cvUrl"
                             target="_blank">
@@ -142,7 +142,13 @@ onMounted(() => {
                     <div
                         class="row-start-2 m-4 self-end rounded-common border-2 border-white/50 bg-[#030303]/10 p-6 backdrop-blur-sm xl:m-8 xl:max-w-92.5"
                         style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
-                        <h2 class="text-[1.625rem] font-light text-primary-common xl:text-[2rem]">
+                        <h2
+                            class="text-[1.625rem] font-light text-primary-common xl:text-[2rem]"
+                            :class="
+                                theme?.variant === 'dark'
+                                    ? 'text-primary-common'
+                                    : 'text-primary-text'
+                            ">
                             Mykhailo
                             <br />
                             Prysiazhnyi
@@ -150,22 +156,22 @@ onMounted(() => {
 
                         <div class="mt-5 flex gap-2 *:w-full *:rounded-common *:py-3.5">
                             <a
-                                class="rounded-max bg-primary-accent text-center leading-none transition-colors duration-400 hover:opacity-90"
+                                class="rounded-max bg-primary-accent text-center leading-none transition-all duration-400 hover:opacity-90"
                                 :class="
-                                    currentTheme === 'theme-mora'
+                                    currentTheme === 'theme-aura'
                                         ? 'text-secondary-common'
-                                        : 'text-white'
+                                        : 'text-primary-text'
                                 "
                                 href="#projects"
                                 aria-label="Go to latest projects section">
                                 Projects
                             </a>
                             <a
-                                class="rounded-max bg-secondary-accent text-center leading-none transition-colors duration-400 hover:bg-primary-accent hover:text-white"
+                                class="rounded-max bg-secondary-accent text-center leading-none transition-all duration-400 hover:bg-primary-accent hover:text-white"
                                 :class="
-                                    currentTheme === 'theme-mora'
-                                        ? 'text-secondary-common'
-                                        : 'text-white'
+                                    currentTheme === 'theme-mora' || theme?.variant === 'light'
+                                        ? 'text-primary-common'
+                                        : 'text-primary-text'
                                 "
                                 href="#services"
                                 aria-label="Go to services section">
@@ -197,7 +203,12 @@ onMounted(() => {
                                 aria-label="Linkedin profile">
                                 <component
                                     :is="link.icon"
-                                    class="rounded-max size-10 rounded-full bg-primary-text object-cover p-2 *:fill-primary-common"
+                                    class="rounded-max size-10 rounded-full object-cover p-2 *:fill-primary-common"
+                                    :class="
+                                        theme?.variant === 'dark'
+                                            ? 'bg-primary-text'
+                                            : 'bg-primary-accent'
+                                    "
                                     :aria-label="`${link.name} profile`" />
                             </a>
                         </li>
@@ -218,7 +229,7 @@ onMounted(() => {
                     <a
                         class="rounded-max mt-8 block w-full rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
                         :class="
-                            currentTheme === 'theme-mora' ? 'text-secondary-common' : 'text-white'
+                            theme?.variant === 'dark' ? 'text-primary-text' : 'text-primary-common'
                         "
                         href="#contact"
                         aria-label="Go to the contact form">
