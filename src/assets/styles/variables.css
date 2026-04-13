@@ -1,56 +1,96 @@
 @layer base {
-    :root,
-    .theme-mora {
-        --primary-common: 23 23 28;
-        --secondary-common: 8 8 8;
-        --nav-bg: 45 45 52;
-        --nav-hover: 78 78 90;
-        --tooltip-bg: 74 74 85;
-        --primary-text: 255 255 255;
-        --muted-text: 191 191 191;
-        --primary-accent: 66 184 131;
-        --secondary-accent: 255 250 240;
-        --border-primary: 60 60 60;
+    :root {
+        --primary-common: 248 248 248;
+        --secondary-common: 212 212 216;
+        --nav-bg: 24 24 27;
+        --nav-hover: 255 255 255;
+        --icon-bg: 63 63 70;
+        --icon-fill: 255 255 255;
+        --primary-text: 23 23 28;
+        --secondary-text: 255 255 255;
+        --accent-text: 23, 23, 28;
+        --button-text: 255 255 255;
+        --muted-text: 82 82 91;
+        --primary-accent: 63 63 70;
+        --secondary-accent: 113 113 122;
+        --tertiary-accent: 113 113 122;
+        --border-primary: 190 190 195;
+        color-scheme: light;
     }
 
     .theme-aura {
         --primary-common: 248 248 248;
         --secondary-common: 212 212 216;
         --nav-bg: 24 24 27;
-        --nav-hover: 39 39 42;
-        --tooltip-bg: 9 9 11;
-        --primary-text: 18 18 18;
+        --nav-hover: 255 255 255;
+        --primary-text: 23 23 28;
+        --icon-bg: 63 63 70;
+        --icon-fill: 255 255 255;
+        --secondary-text: 255 255 255;
+        --accent-text: 23, 23, 28;
+        --button-text: 255 255 255;
         --muted-text: 82 82 91;
         --primary-accent: 63 63 70;
         --secondary-accent: 113 113 122;
+        --tertiary-accent: 113 113 122;
         --border-primary: 190 190 195;
-        --video-invert: 1;
-        --video-blend: multiply;
+        color-scheme: light;
+    }
+
+    .theme-mora {
+        --primary-common: 23 23 28;
+        --secondary-common: 8 8 8;
+        --nav-bg: 45 45 52;
+        --nav-hover: 255 255 255;
+        --icon-bg: 248 248 248;
+        --icon-fill: 23 23 28;
+        --primary-text: 255 255 255;
+        --secondary-text: 23 23 28;
+        --accent-text: 23, 23, 28;
+        --button-text: 255 255 255;
+        --muted-text: 191 191 191;
+        --primary-accent: 66 184 131;
+        --secondary-accent: 255 250 240;
+        --tertiary-accent: 66 184 131;
+        --border-primary: 60 60 60;
+        color-scheme: dark;
     }
 
     .theme-sona {
         --primary-common: 15 19 32;
         --secondary-common: 6 8 15;
         --nav-bg: 28 36 55;
-        --nav-hover: 42 52 75;
-        --tooltip-bg: 210 25 30;
+        --nav-hover: 255 255 255;
+        --icon-bg: 248 248 248;
+        --icon-fill: 23 23 28;
         --primary-text: 248 250 252;
+        --secondary-text: 255 255 255;
+        --accent-text: 23, 23, 28;
+        --button-text: 255 255 255;
         --muted-text: 160 175 195;
         --primary-accent: 240 30 35;
         --secondary-accent: 145 20 20;
+        --tertiary-accent: 145 20 20;
         --border-primary: 38 50 70;
+        color-scheme: dark;
     }
 
     .theme-luna {
         --primary-common: 14 16 35;
         --secondary-common: 8 10 24;
         --nav-bg: 24 30 55;
-        --nav-hover: 40 48 85;
-        --tooltip-bg: 55 72 140;
+        --nav-hover: 255 255 255;
+        --icon-bg: 248 248 248;
+        --icon-fill: 23 23 28;
         --primary-text: 240 245 255;
+        --secondary-text: 240 245 255;
+        --button-text: 255 255 255;
+        --accent-text: 23, 23, 28;
         --muted-text: 175 190 215;
         --primary-accent: 90 80 210;
         --secondary-accent: 104 186 166;
+        --tertiary-accent: 104 186 166;
         --border-primary: 48 55 80;
+        color-scheme: dark;
     }
 }

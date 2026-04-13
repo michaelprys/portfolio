@@ -3,12 +3,7 @@ import IconGithub from '@/components/icons/IconGithub.vue';
 import IconLinkedin from '@/components/icons/IconLinkedin.vue';
 import IconStackoverflow from '@/components/icons/IconStackoverflow.vue';
 import BaseIcon from '@/components/base/BaseIcon.vue';
-import { computed, onMounted, ref } from 'vue';
-import { useTheme } from '@/composables/useTheme.js';
-
-const { getTheme, currentTheme } = useTheme();
-
-const theme = computed(() => getTheme(currentTheme.value));
+import { onMounted, ref } from 'vue';
 
 const icons = [
     { name: 'Vue 3', url: 'https://vuejs.org' },
@@ -83,24 +78,19 @@ onMounted(() => {
                             </div>
 
                             <div class="-mt-3">
-                                <p class="text-body mt-3 xl:mt-2">
+                                <p class="text-primary-text text-body mt-3 xl:mt-2">
                                     Developing web applications using Vue 3 and TypeScript. I
                                     prioritize creating responsive interfaces that are user-focused
                                     and work consistently across all platforms and devices.
                                 </p>
-                                <p class="text-body mt-3.5">
+                                <p class="text-body text-primary-text mt-3.5">
                                     I value organized code and practical design, keeping the product
                                     stable, easy to navigate, and simple to maintain.
                                 </p>
                             </div>
                         </div>
                         <a
-                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent py-4 text-center transition-all duration-400 hover:bg-primary-accent hover:text-white"
-                            :class="
-                                currentTheme === 'theme-mora' || theme?.variant === 'light'
-                                    ? 'text-primary-common'
-                                    : 'text-primary-text'
-                            "
+                            class="rounded-max mt-6 w-full rounded-common bg-secondary-accent text-secondary-text py-4 text-center transition-all duration-400 hover:bg-primary-accent hover:text-white"
                             :href="cvUrl"
                             target="_blank">
                             View CV
@@ -141,14 +131,8 @@ onMounted(() => {
                         alt="Profile photo" />
                     <div
                         class="row-start-2 m-4 self-end rounded-common border-2 border-white/50 bg-[#030303]/10 p-6 backdrop-blur-sm xl:m-8 xl:max-w-92.5"
-                        style="box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08)">
-                        <h2
-                            class="text-[1.625rem] font-light text-primary-common xl:text-[2rem]"
-                            :class="
-                                theme?.variant === 'dark'
-                                    ? 'text-primary-common'
-                                    : 'text-primary-text'
-                            ">
+                        style="box-shadow: inset 0 0 0 12.5rem rgba(255, 255, 255, 0.08)">
+                        <h2 class="text-[1.625rem] font-light text-accent-text xl:text-[2rem]">
                             Mykhailo
                             <br />
                             Prysiazhnyi
@@ -156,23 +140,13 @@ onMounted(() => {
 
                         <div class="mt-5 flex gap-2 *:w-full *:rounded-common *:py-3.5">
                             <a
-                                class="rounded-max bg-primary-accent text-center leading-none transition-all duration-400 hover:opacity-90"
-                                :class="
-                                    currentTheme === 'theme-aura'
-                                        ? 'text-secondary-common'
-                                        : 'text-primary-text'
-                                "
+                                class="rounded-max bg-primary-accent text-button-text text-center leading-none transition-all duration-400 hover:opacity-90"
                                 href="#projects"
                                 aria-label="Go to latest projects section">
                                 Projects
                             </a>
                             <a
-                                class="rounded-max bg-secondary-accent text-center leading-none transition-all duration-400 hover:bg-primary-accent hover:text-white"
-                                :class="
-                                    currentTheme === 'theme-mora' || theme?.variant === 'light'
-                                        ? 'text-primary-common'
-                                        : 'text-primary-text'
-                                "
+                                class="rounded-max bg-secondary-accent text-secondary-text text-center leading-none transition-all duration-400 hover:bg-primary-accent hover:text-white"
                                 href="#services"
                                 aria-label="Go to services section">
                                 Services
@@ -203,22 +177,14 @@ onMounted(() => {
                                 aria-label="Linkedin profile">
                                 <component
                                     :is="link.icon"
-                                    class="rounded-max size-10 rounded-full object-cover p-2 *:fill-primary-common"
-                                    :class="
-                                        theme?.variant === 'dark'
-                                            ? 'bg-primary-text'
-                                            : 'bg-primary-accent'
-                                    "
+                                    class="rounded-max size-10 rounded-full object-cover p-2 *:fill-icon-fill bg-icon-bg"
                                     :aria-label="`${link.name} profile`" />
                             </a>
                         </li>
                     </ul>
                     <div class="flex h-35 items-center justify-center overflow-hidden">
                         <div
-                            class="mx-auto mt-2 h-52.5 w-58 bg-[url('/images/home/texture.webp')] bg-size-[45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-90"
-                            :class="{
-                                'mix-blend-multiply invert opacity-70': theme?.variant === 'light',
-                            }" />
+                            class="mx-auto mt-2 h-52.5 w-58 bg-[url('/images/home/texture.webp')] bg-size-[45rem] bg-center bg-no-repeat mix-blend-color-dodge blur-[.5008px] brightness-90" />
                     </div>
 
                     <p class="mt-4 text-sm">
@@ -227,10 +193,7 @@ onMounted(() => {
                         and I will respond promptly.
                     </p>
                     <a
-                        class="rounded-max mt-8 block w-full rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
-                        :class="
-                            theme?.variant === 'dark' ? 'text-primary-text' : 'text-primary-common'
-                        "
+                        class="rounded-max text-button-text mt-8 block w-full rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
                         href="#contact"
                         aria-label="Go to the contact form">
                         Contact Me

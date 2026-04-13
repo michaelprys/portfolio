@@ -1,32 +1,46 @@
 import { ref, watch } from 'vue';
 
-const themes = [
-    { id: 'theme-mora', variant: 'dark', color: 'bg-[#17171c]', label: 'Mora' },
-    { id: 'theme-sona', variant: 'dark', color: 'bg-[#0f172a]', label: 'Sona' },
-    { id: 'theme-aura', variant: 'light', color: 'bg-[#f8fafc]', label: 'Aura' },
-    { id: 'theme-luna', variant: 'dark', color: 'bg-[#3C3291]', label: 'Luna' },
+export const themes = [
+    { id: 'auto', color: 'bg-gradient-to-r from-white to-black', label: 'System' },
+    { id: 'theme-mora', color: 'bg-[#17171c]', label: 'Mora' },
+    { id: 'theme-sona', color: 'bg-[#0f172a]', label: 'Sona' },
+    { id: 'theme-aura', color: 'bg-[#f8fafc]', label: 'Aura' },
+    { id: 'theme-luna', color: 'bg-[#3C3291]', label: 'Luna' },
 ];
 
-const currentTheme = ref(
-    !import.meta.env.SSR ? localStorage.getItem('theme-color') || 'theme-mora' : 'theme-mora',
-);
-const getTheme = (id) => themes.find((theme) => theme.id === id);
-
-watch(
-    currentTheme,
-    (newTheme, oldTheme) => {
-        if (import.meta.env.SSR) return;
-
-        const element = document.documentElement;
-        if (oldTheme) {
-            element.classList.remove(oldTheme);
-        }
-        element.classList.add(newTheme);
-        localStorage.setItem('theme-color', newTheme);
-    },
-    { immediate: true },
-);
-
 export const useTheme = () => {
-    return { themes, currentTheme, getTheme };
+    const currentTheme = ref(localStorage.getItem('theme-color') || 'auto');
+
+    const resolveAuto = () =>
+        matchMedia('(prefers-color-scheme:dark)').matches ? 'theme-mora' : 'theme-aura';
+
+    watch(
+        currentTheme,
+        (v, old) => {
+            if (import.meta.env.SSR) return;
+
+            const el = document.documentElement;
+
+            el.classList.add('theme-switching');
+
+            const theme = v === 'auto' ? resolveAuto() : v;
+
+            if (old && old !== 'auto') el.classList.remove(old);
+
+            el.classList.remove('theme-mora', 'theme-sona', 'theme-aura', 'theme-luna');
+
+            el.classList.add(theme);
+
+            el.style.colorScheme = theme === 'theme-aura' ? 'light' : 'dark';
+
+            localStorage.setItem('theme-color', v);
+
+            requestAnimationFrame(() => {
+                el.classList.remove('theme-switching');
+            });
+        },
+        { immediate: true },
+    );
+
+    return { themes, currentTheme };
 };

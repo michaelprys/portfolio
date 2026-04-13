@@ -3,8 +3,30 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mykhailo Prysiazhnyi</title>
+
+        <script>
+            (function () {
+                const d = document.documentElement;
+                const saved = localStorage.getItem('theme-color') || 'auto';
+                const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+
+                const theme = saved === 'auto' ? (dark ? 'theme-mora' : 'theme-aura') : saved;
+
+                d.classList.add(theme);
+                d.style.colorScheme = theme === 'theme-aura' ? 'light' : 'dark';
+            })();
+        </script>
+
+        <style>
+            html,
+            body {
+                margin: 0;
+                background: #080808;
+            }
+        </style>
+
         <link rel="icon" href="/favicon.ico" />
+
         <link
             rel="preload"
             href="/fonts/Gotham-Bold.woff2"
@@ -29,25 +51,7 @@
             as="font"
             type="font/woff2"
             crossorigin />
-
-        <style>
-            html {
-                background-color: #f4f4f5;
-                color-scheme: light dark;
-            }
-
-            @media (prefers-color-scheme: dark) {
-                html {
-                    background-color: #080808;
-                }
-            }
-
-            html.dark {
-                background-color: #080808;
-            }
-        </style>
     </head>
-
     <body>
         <div id="app"></div>
         <script type="module" src="/src/main.js"></script>

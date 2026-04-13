@@ -11,21 +11,17 @@ const toggleMenu = () => {
 };
 
 const switchTheme = (id) => {
-    document.documentElement.classList.add('theme-switching');
     currentTheme.value = id;
     isMenuOpen.value = false;
-    setTimeout(() => {
-        document.documentElement.classList.remove('theme-switching');
-    }, 500);
 };
 </script>
 
 <template>
     <div
         @click="toggleMenu"
-        class="fade-in-secondary group fixed right-4 top-4 z-9999 w-12 xl:right-6 xl:top-6 xl:w-40">
+        class="group fixed right-4 top-4 z-9999 w-12 xl:right-6 xl:top-6 xl:w-40">
         <div
-            class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-nav-bg/70 shadow-2xl backdrop-blur-xl transition-all duration-700 smooth-rotation"
+            class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-nav-bg/70 shadow-2xl backdrop-blur-sm transition-all duration-700 smooth-rotation"
             :class="
                 isMenuOpen
                     ? 'rounded-2xl bg-nav-bg/90'
@@ -39,12 +35,10 @@ const switchTheme = (id) => {
                     :class="isMenuOpen ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'">
                     Theme
                 </span>
-
                 <IconTheme
                     class="shrink-0 text-white transition-transform duration-700"
                     :class="isMenuOpen ? 'rotate-90' : 'group-hover:rotate-90'" />
             </div>
-
             <div
                 class="grid transition-all duration-700 smooth-rotation"
                 :class="
@@ -66,7 +60,6 @@ const switchTheme = (id) => {
                                         : 'group-hover/item:scale-125',
                                     currentTheme === theme.id ? 'ring-white/50' : 'ring-white/20',
                                 ]" />
-
                             <span
                                 class="hidden xl:block xl:w-0 xl:overflow-hidden xl:text-sm xl:font-medium xl:tracking-tight xl:text-white xl:transition-all xl:duration-300"
                                 :class="
@@ -81,7 +74,6 @@ const switchTheme = (id) => {
                 </div>
             </div>
         </div>
-
         <div
             class="absolute right-0 top-0 -z-10 size-12 rounded-full bg-primary-accent/20 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
             :class="{ 'opacity-100': isMenuOpen }" />
@@ -93,7 +85,6 @@ button {
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 .smooth-rotation {
     transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }

@@ -3,12 +3,6 @@ import IconCode from '@/components/icons/IconCode.vue';
 import IconGear from '@/components/icons/IconGear.vue';
 import IconRocket from '@/components/icons/IconRocket.vue';
 import BaseObserver from '@/components/base/BaseObserver.vue';
-import { useTheme } from '@/composables/useTheme.js';
-import { computed } from 'vue';
-
-const { getTheme, currentTheme } = useTheme();
-
-const theme = computed(() => getTheme(currentTheme.value));
 </script>
 
 <template>
@@ -25,12 +19,7 @@ const theme = computed(() => getTheme(currentTheme.value));
                     <li class="group" :class="isVisible ? 'fade-in-down' : 'invisible'">
                         <div class="relative *:transition-transform *:duration-400">
                             <div
-                                class="ml-2 size-12 rounded-full group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14"
-                                :class="
-                                    currentTheme === 'theme-mora' || theme?.variant === 'dark'
-                                        ? 'bg-primary-accent'
-                                        : 'bg-secondary-accent'
-                                " />
+                                class="ml-2 size-12 rounded-full bg-tertiary-accent group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14" />
                             <IconCode
                                 class="absolute -bottom-2 left-0 size-9 *:fill-primary-text xl:-bottom-3 xl:size-11" />
                         </div>
@@ -44,12 +33,7 @@ const theme = computed(() => getTheme(currentTheme.value));
                     <li class="group" :class="isVisible ? 'fade-in-down' : 'invisible'">
                         <div class="relative *:transition-transform *:duration-400">
                             <div
-                                class="ml-2 size-12 rounded-full bg-primary-accent group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14"
-                                :class="
-                                    currentTheme === 'theme-mora' || theme?.variant === 'dark'
-                                        ? 'bg-primary-accent'
-                                        : 'bg-secondary-accent'
-                                " />
+                                class="ml-2 size-12 rounded-full bg-tertiary-accent group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14" />
                             <IconRocket
                                 class="absolute -bottom-2 left-0 size-9 *:fill-primary-text xl:-bottom-3 xl:size-11" />
                         </div>
@@ -63,12 +47,7 @@ const theme = computed(() => getTheme(currentTheme.value));
                     <li class="group" :class="isVisible ? 'fade-in-down' : 'invisible'">
                         <div class="relative *:transition-transform *:duration-400">
                             <div
-                                class="ml-2 size-12 rounded-full bg-primary-accent group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14"
-                                :class="
-                                    currentTheme === 'theme-mora' || theme?.variant === 'dark'
-                                        ? 'bg-primary-accent'
-                                        : 'bg-secondary-accent'
-                                " />
+                                class="ml-2 size-12 rounded-full bg-tertiary-accent group-hover:-translate-y-1 group-hover:translate-x-1 xl:size-14" />
                             <IconGear
                                 class="absolute -bottom-2 left-0 size-9 *:fill-primary-text xl:-bottom-3 xl:size-11" />
                         </div>

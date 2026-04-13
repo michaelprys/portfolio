@@ -3,40 +3,22 @@
 @import './variables.css';
 @import './animations.css';
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    ::before,
-    ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-.theme-switching *,
-.theme-switching {
-    transition-property: background-color, color, border-color, box-shadow, opacity !important;
-    transition-duration: 0s !important;
-    transition-timing-function: ease-in-out !important;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 html,
 body {
-    overflow-x: clip;
-    width: 100%;
-    position: relative;
-}
-
-body {
+    scroll-behavior: smooth;
     background-color: rgb(var(--secondary-common));
     color: rgb(var(--primary-text));
     font-family: 'Gotham', sans-serif;
+}
+
+body {
+    @apply w-full relative overflow-x-clip;
     transition:
-        background-color 0.5s ease,
-        color 0.5s ease;
+        background-color 0.35s,
+        color 0.35s;
+}
+
+.theme-switching,
+.theme-switching * {
+    transition: none !important;
 }

@@ -7,11 +7,6 @@ import emailjs from '@emailjs/browser';
 import useVuelidate from '@vuelidate/core';
 import { email, minLength, required, maxLength } from '@vuelidate/validators';
 import { computed, reactive, ref } from 'vue';
-import { useTheme } from '@/composables/useTheme.js';
-
-const { getTheme, currentTheme } = useTheme();
-
-const theme = computed(() => getTheme(currentTheme.value));
 
 const { showToast } = useToast();
 const messagePending = ref(false);
@@ -91,8 +86,7 @@ const sendMessage = () => {
                 messagePending.value = false;
                 v$.value.$reset();
             })
-            .catch((error) => {
-                console.error(error);
+            .catch(() => {
                 showToast('failed', 'Failed to send message');
                 isSubmitted.value = false;
                 messagePending.value = false;
@@ -175,12 +169,7 @@ const sendMessage = () => {
                             </span>
                         </button>
                         <button
-                            class="mt-5 w-full cursor-pointer rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
-                            :class="
-                                theme?.variant === 'dark'
-                                    ? 'text-secondary-text'
-                                    : 'text-primary-common'
-                            "
+                            class="mt-5 w-full text-button-text cursor-pointer rounded-full bg-primary-accent py-4 text-center transition-colors duration-400 hover:bg-primary-accent/90"
                             v-else>
                             <span>Send message</span>
                         </button>

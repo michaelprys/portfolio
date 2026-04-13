@@ -9,11 +9,16 @@
     --color-secondary-common: rgb(var(--secondary-common));
     --color-nav-bg: rgb(var(--nav-bg));
     --color-nav-hover: rgb(var(--nav-hover));
-    --color-tooltip-bg: rgb(var(--tooltip-bg));
+    --color-icon-bg: rgb(var(--icon-bg));
+    --color-icon-fill: rgb(var(--icon-fill));
     --color-primary-text: rgb(var(--primary-text));
+    --color-secondary-text: rgb(var(--secondary-text));
+    --color-accent-text: rgb(var(--accent-text));
+    --color-button-text: rgb(var(--button-text));
     --color-muted-text: rgb(var(--muted-text));
     --color-primary-accent: rgb(var(--primary-accent));
     --color-secondary-accent: rgb(var(--secondary-accent));
+    --color-tertiary-accent: rgb(var(--tertiary-accent));
     --color-border-primary: rgb(var(--border-primary));
 
     --radius-common: 2rem;
